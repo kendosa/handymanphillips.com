@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phillips Logo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yesteryear&family=Norican&family=Rammetto+One&family=Titan+One&family=Bebas+Neue&display=block" rel="stylesheet">
+<style>
+  :root { --ink: #111; --bg: #e2703a; }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; gap: 60px; background: var(--bg); padding: 60px 16px; }
+  .board { display: grid; place-items: center; padding: 70px 80px; }
+  .board.dark { background: #171717; --ink: #faf6ef; }
+  .board.cream { background: #faf6ef; --ink: #171717; }
+
+  /* ── Phillips lockup ── */
+  .ph-logo {
+    --s: 1;
+    display: inline-flex; flex-direction: column; align-items: center;
+    color: var(--ink); line-height: 1; text-align: center;
+  }
+  .ph-logo .script {
+    font-family: "Yesteryear", cursive;
+    font-size: calc(200px * var(--s));
+    -webkit-text-stroke: calc(3.2px * var(--s)) currentColor;
+    letter-spacing: 0.01em;
+    transform: rotate(-4deg);
+    margin: calc(-20px * var(--s)) 0 calc(18px * var(--s)) calc(-10px * var(--s));
+    padding: 0 0.12em;
+  }
+  .ph-logo .heavy {
+    font-family: "Rammetto One", sans-serif;
+    font-size: calc(74px * var(--s));
+    letter-spacing: 0.1em;
+    margin-right: -0.1em;
+    line-height: 1.05;
+  }
+  .ph-logo .cond {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(84px * var(--s));
+    letter-spacing: 0.03em;
+    margin-top: calc(30px * var(--s));
+  }
+  .ph-logo .tag {
+    font-family: "Rammetto One", sans-serif;
+    font-size: calc(22px * var(--s));
+    letter-spacing: 0.36em;
+    margin-right: -0.36em;
+    margin-top: calc(2px * var(--s));
+  }
+
+  /* ── Option B: Norican script (clean p→s join), Titan One (flat A tops) ── */
+  .ph-logo.b .script {
+    font-family: "Norican", cursive;
+    font-size: calc(190px * var(--s));
+    -webkit-text-stroke: calc(5px * var(--s)) currentColor;
+    letter-spacing: 0;
+    transform: rotate(-5deg) scaleX(1.08);
+    margin: calc(-28px * var(--s)) 0 calc(14px * var(--s)) calc(-10px * var(--s));
+  }
+  .ph-logo.b .heavy, .ph-logo.b .tag { font-family: "Titan One", sans-serif; }
+  .ph-logo.b .heavy { font-size: calc(80px * var(--s)); letter-spacing: 0.08em; margin-right: -0.08em; }
+  .ph-logo.b .tag { letter-spacing: 0.34em; margin-right: -0.34em; }
+
+  .options { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; }
+  .label { font: 600 13px/1 system-ui, sans-serif; letter-spacing: .16em; text-transform: uppercase; color: #111; text-align: center; margin-bottom: -40px; opacity: .7; }
+</style>
+</head>
+<body>
+  <p class="label">Option B</p>
+  <div class="board">
+    <div class="ph-logo b" style="--s:1" role="img" aria-label="Phillips Handyman and Home Services">
+      <span class="script">Phillips</span>
+      <span class="heavy">HANDYMAN</span>
+      <span class="cond">&amp; HOME SERVICES</span>
+      <span class="tag">ULSTER COUNTY, N.Y.</span>
+    </div>
+  </div>
+  <div class="options">
+  <div class="board dark">
+    <div class="ph-logo b" style="--s:.6" role="img" aria-label="Phillips Handyman and Home Services">
+      <span class="script">Phillips</span>
+      <span class="heavy">HANDYMAN</span>
+      <span class="cond">&amp; HOME SERVICES</span>
+      <span class="tag">ULSTER COUNTY, N.Y.</span>
+    </div>
+  </div>
+  <div class="board cream">
+    <div class="ph-logo b" style="--s:.6" role="img" aria-label="Phillips Handyman and Home Services">
+      <span class="script">Phillips</span>
+      <span class="heavy">HANDYMAN</span>
+      <span class="cond">&amp; HOME SERVICES</span>
+      <span class="tag">ULSTER COUNTY, N.Y.</span>
+    </div>
+  </div>
+  </div>
+  <p class="label">Option A (current)</p>
+  <div class="board">
+    <div class="ph-logo" style="--s:1" role="img" aria-label="Phillips Handyman and Home Services">
+      <span class="script">Phillips</span>
+      <span class="heavy">HANDYMAN</span>
+      <span class="cond">&amp; HOME SERVICES</span>
+      <span class="tag">ULSTER COUNTY, N.Y.</span>
+    </div>
+  </div>
+  <div class="options">
+  <div class="board dark">
+    <div class="ph-logo" style="--s:.6" role="img" aria-label="Phillips Handyman and Home Services">
+      <span class="script">Phillips</span>
+      <span class="heavy">HANDYMAN</span>
+      <span class="cond">&amp; HOME SERVICES</span>
+      <span class="tag">ULSTER COUNTY, N.Y.</span>
+    </div>
+  </div>
+  <div class="board cream">
+    <div class="ph-logo" style="--s:.6" role="img" aria-label="Phillips Handyman and Home Services">
+      <span class="script">Phillips</span>
+      <span class="heavy">HANDYMAN</span>
+      <span class="cond">&amp; HOME SERVICES</span>
+      <span class="tag">ULSTER COUNTY, N.Y.</span>
+    </div>
+  </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phillips Handyman &amp; Home Services · Ulster County, NY</title>
+<meta name="description" content="Carpentry, built&#8209;ins, fences, deck refinishing, painting and pressure washing across Ulster County, NY. Free written estimates from a local pro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Norican&family=Titan+One&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #171717;
+    --cream: #faf6ef;
+    --orange: #ff5c00;
+    --orange-deep: #b34000;
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans: "Inter Tight", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+    --pad: 50px;
+    --section: clamp(80px, 10vw, 150px);
+    --header-h: 104px;
+  }
+  @media (max-width: 900px) { :root { --pad: 20px; --header-h: 84px; } }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 500; margin: 0; text-wrap: balance; }
+  p { margin: 0; text-wrap: pretty; }
+
+  /* Placeholder text to fill before launch */
+  .ph {
+    background: rgba(255, 92, 0, 0.14);
+    box-shadow: inset 0 -1px 0 var(--orange);
+    padding: 0 0.15em;
+    border-radius: 2px;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 24px;
+    padding: 0 var(--pad);
+    width: 100%;
+    max-width: 1480px;
+    margin: 0 auto;
+  }
+  @media (max-width: 900px) {
+    .container { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .container > *:not(.logo):not(.menu-btn):not(.foot-col) { grid-column: 1 / -1; }
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-weight: 500;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--orange);
+  }
+  .section-title {
+    font-size: clamp(2.15rem, 5vw, 4.6rem);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+  }
+  .lede { font-size: 1.2rem; line-height: 1.5; max-width: 46ch; }
+  .muted { opacity: 0.65; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 30px;
+    border: 2px solid currentColor;
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    background: transparent;
+    font-family: var(--sans);
+    color: inherit;
+    transition: background-color .2s, color .2s, border-color .2s;
+  }
+  .btn-outline-ink:hover { background: var(--ink); color: var(--cream); }
+  .btn-outline-cream:hover { background: var(--cream); color: var(--ink); border-color: var(--cream); }
+  .btn-orange { background: var(--orange); border-color: var(--orange); color: var(--cream); }
+  .btn-orange:hover { background: var(--orange-deep); border-color: var(--orange-deep); }
+  .arrow { color: var(--orange); transition: transform .2s; }
+  a:hover .arrow, button:hover .arrow { transform: translateX(4px); }
+  .btn-orange .arrow { color: var(--cream); }
+
+  .diamond { display: inline-block; width: 8px; height: 8px; background: var(--orange); transform: rotate(45deg); flex-shrink: 0; }
+
+  /* ── Header ── */
+  .site-header {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    z-index: 20;
+    color: var(--cream);
+  }
+  .site-header .container { align-items: center; height: var(--header-h); }
+  .logo { grid-column: span 4; display: flex; align-items: center; justify-self: start; }
+
+  /* Phillips lockup, option B (see logo.html) */
+  .ph-logo {
+    --s: 1;
+    display: inline-flex; flex-direction: column; align-items: center;
+    color: currentColor; line-height: 1; text-align: center;
+  }
+  .ph-logo .script {
+    font-family: "Norican", cursive;
+    font-size: calc(190px * var(--s));
+    -webkit-text-stroke: calc(5px * var(--s)) currentColor;
+    letter-spacing: 0;
+    transform: rotate(-5deg) scaleX(1.08);
+    margin: calc(-28px * var(--s)) 0 calc(14px * var(--s)) calc(-10px * var(--s));
+    padding: 0 0.12em;
+  }
+  .ph-logo .heavy {
+    font-family: "Titan One", sans-serif;
+    font-size: calc(80px * var(--s));
+    letter-spacing: 0.08em;
+    margin-right: -0.08em;
+    line-height: 1.05;
+  }
+  .ph-logo .cond {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: calc(84px * var(--s));
+    letter-spacing: 0.03em;
+    margin-top: calc(30px * var(--s));
+  }
+  .ph-logo .tag {
+    font-family: "Titan One", sans-serif;
+    font-size: calc(22px * var(--s));
+    letter-spacing: 0.34em;
+    margin-right: -0.34em;
+    margin-top: calc(2px * var(--s));
+  }
+  .site-header .ph-logo { --s: .24; margin-top: 40px; }
+  .foot-brand .ph-logo { --s: .5; color: var(--orange); margin: 14px 0 18px; }
+  /* Matches .hero-sub */
+  .nav { grid-column: 5 / -1; display: flex; justify-content: flex-end; align-items: center; gap: clamp(20px, 2.2vw, 34px); font-family: var(--sans); font-size: clamp(1.05rem, 1.6vw, 1.3rem); font-weight: 400; color: rgba(250,246,239,.85); }
+  .nav a:hover { color: var(--cream); }
+  .nav a:not(.btn) { position: relative; }
+  .nav a:not(.btn)::after {
+    content: ""; position: absolute; left: 0; bottom: -4px; height: 1px; width: 100%;
+    background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .25s;
+  }
+  .nav a:not(.btn):hover::after { transform: scaleX(1); }
+  .nav .btn { padding: 9px 20px; font-size: inherit; font-weight: 400; }
+  .menu-btn {
+    display: none; grid-column: -2 / -1; justify-self: end;
+    width: 34px; height: 34px; background: var(--orange); border: 0; border-radius: 2px; cursor: pointer;
+    flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  }
+  .menu-btn span { display: block; width: 13px; height: 1px; background: var(--cream); }
+  @media (max-width: 900px) {
+    .logo { grid-column: span 3; }
+    .site-header .ph-logo { --s: .19; margin-top: 28px; }
+    .menu-btn { display: flex; }
+    .nav {
+      position: absolute; top: var(--header-h); left: 0; right: 0;
+      flex-direction: column; gap: 22px; padding: 28px var(--pad) 34px;
+      background: var(--orange); font-size: 1rem;
+      opacity: 0; pointer-events: none; transform: translateY(-8px); transition: opacity .25s, transform .25s;
+    }
+    .nav.open { opacity: 1; pointer-events: auto; transform: none; }
+    .nav .btn { border-color: var(--cream); }
+  }
+
+  /* ── Hero ── */
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    background: var(--ink);
+    color: var(--cream);
+    padding-bottom: var(--pad);
+  }
+  .hero-media { position: absolute; inset: 0; animation: heroZoom 14s ease-out both; }
+  .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
+  .hero-media::before, .hero-media::after { content: ""; position: absolute; inset: 0; }
+  .hero-media::before { background: linear-gradient(to top, var(--ink), rgba(23,23,23,.6) 45%, rgba(23,23,23,.15)); }
+  .hero-media::after { background: linear-gradient(to right, rgba(23,23,23,.75), rgba(23,23,23,.2) 55%, transparent); }
+  @media (min-width: 901px) {
+    .hero-media { left: 40%; }
+    .hero-media img { object-position: 50% 45%; }
+    .hero-media::after { background: linear-gradient(to right, var(--ink), rgba(23,23,23,.55) 22%, transparent 50%); }
+  }
+  @keyframes heroZoom { from { transform: scale(1.12); } to { transform: scale(1); } }
+  .hero::before { content: ""; position: absolute; inset: 0 0 auto; height: 180px; z-index: 1; background: linear-gradient(to bottom, rgba(23,23,23,.7), transparent); pointer-events: none; }
+  .hero-inner { position: relative; z-index: 1; margin-top: calc(var(--header-h) + 70px); }
+  .hero-copy { grid-column: 1 / span 9; }
+  .hero h1 {
+    font-size: clamp(2.6rem, 6vw, 5.4rem);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    max-width: 15ch;
+    margin-top: 22px;
+  }
+  .hero-sub { margin-top: 22px; font-size: clamp(1.05rem, 1.6vw, 1.3rem); color: rgba(250,246,239,.85); max-width: 50ch; }
+  .hero-actions { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 14px 26px; align-items: center; }
+  .hero-phone { font-family: var(--mono); font-size: 0.85rem; letter-spacing: 0.06em; color: rgba(250,246,239,.85); }
+  .hero-phone strong { color: var(--cream); font-weight: 500; }
+  .hero-cards {
+    grid-column: 1 / -1;
+    margin-top: clamp(40px, 6vw, 70px);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(250,246,239,.15);
+    border: 1px solid rgba(250,246,239,.15);
+    max-width: 1180px;
+  }
+  .hero-card {
+    background: rgba(23,23,23,.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 26px 28px;
+    display: flex; flex-direction: column; gap: 10px;
+    transition: background-color .2s;
+  }
+  .hero-card:hover { background: rgba(23,23,23,.92); }
+  .hero-card-title { display: flex; align-items: center; gap: 12px; font-family: var(--serif); font-size: 1.3rem; }
+  .hero-card p { font-size: 0.9rem; color: rgba(250,246,239,.75); line-height: 1.45; }
+  .hero-card-link { margin-top: 4px; font-size: 0.88rem; font-weight: 500; display: inline-flex; gap: 8px; }
+  @media (max-width: 900px) {
+    .hero-copy { grid-column: 1 / -1; }
+    .hero-cards { grid-template-columns: 1fr; }
+  }
+  .rise { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
+  .rise-2 { animation-delay: .15s; }
+  .rise-3 { animation-delay: .3s; }
+  @keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+  /* ── Sections ── */
+  section { scroll-margin-top: 20px; }
+  .band { padding: var(--section) 0; }
+  .band-ink { background: var(--ink); color: var(--cream); }
+  .intro-col { grid-column: 1 / span 5; display: flex; flex-direction: column; gap: 24px; align-self: start; }
+  .list-col { grid-column: 7 / -1; }
+  @media (max-width: 900px) {
+    .intro-col, .list-col { grid-column: 1 / -1; }
+    .intro-col { margin-bottom: 40px; }
+  }
+  @media (min-width: 901px) { .intro-col.sticky { position: sticky; top: 40px; } }
+
+  .numbered { display: flex; gap: 26px; align-items: flex-start; padding: 30px 0; }
+  .numbered + .numbered { border-top: 1px solid rgba(23,23,23,.12); }
+  .num {
+    flex-shrink: 0; width: 36px; height: 36px; margin-top: 4px;
+    border: 2px solid var(--orange); transform: rotate(45deg);
+    display: grid; place-items: center;
+  }
+  .num span { transform: rotate(-45deg); color: var(--orange); font-weight: 700; font-size: 0.8rem; }
+  .numbered h3 { font-size: clamp(1.3rem, 2vw, 1.6rem); letter-spacing: -0.015em; }
+  .numbered p { margin-top: 8px; font-size: 1.05rem; line-height: 1.6; color: rgba(23,23,23,.62); max-width: 52ch; }
+  .numbered.extra h3 { font-style: italic; }
+
+  /* ── Work ── */
+  .work-head { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; align-items: end; margin-bottom: clamp(40px, 6vw, 70px); }
+  .work-head .intro-col { grid-column: 1 / span 6; }
+  .stats {
+    grid-column: 8 / -1;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid rgba(250,246,239,.18);
+  }
+  .stat { padding: 22px 16px 0 0; }
+  .stat-num { font-family: var(--serif); font-size: clamp(2rem, 3.4vw, 3rem); letter-spacing: -0.03em; line-height: 1; }
+  .stat-label { margin-top: 10px; font-size: 0.85rem; color: rgba(250,246,239,.65); line-height: 1.4; }
+  @media (max-width: 900px) {
+    .work-head .intro-col, .stats { grid-column: 1 / -1; }
+  }
+  .gallery {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: clamp(120px, 14vw, 210px);
+    gap: 14px;
+  }
+  .tile { position: relative; overflow: hidden; background: #222; margin: 0; }
+  .tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+  .tile:hover img { transform: scale(1.04); }
+  .tile figcaption {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    padding: 40px 18px 14px;
+    background: linear-gradient(to top, rgba(23,23,23,.85), transparent);
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+  }
+  .tile { grid-column: span var(--c, 4); grid-row: span var(--r, 2); }
+  @media (max-width: 900px) {
+    .gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 44vw; gap: 10px; }
+    .gallery .tile { grid-column: span 1; grid-row: span 1; }
+    .gallery .tile.wide { grid-column: span 2; grid-row: span 2; }
+  }
+
+  /* ── About ── */
+  .about-photo { grid-column: 1 / span 5; position: relative; }
+  .about-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+  .about-photo .tag {
+    position: absolute; left: 0; bottom: 0; background: var(--ink); color: var(--cream);
+    padding: 14px 18px; display: flex; align-items: center; gap: 10px;
+    font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+  }
+  .about-copy { grid-column: 7 / -1; display: flex; flex-direction: column; gap: 24px; justify-content: center; }
+  .about-copy .body p { font-size: 1.1rem; line-height: 1.65; max-width: 54ch; }
+  .about-copy .body p + p { margin-top: 18px; }
+  .trust { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(23,23,23,.12); border: 1px solid rgba(23,23,23,.12); margin-top: 10px; }
+  .trust li { background: var(--cream); list-style: none; padding: 18px 20px; display: flex; gap: 12px; align-items: center; font-weight: 500; font-size: 0.95rem; }
+  .trust { padding: 0; }
+  @media (max-width: 900px) {
+    .about-photo { grid-column: 1 / -1; margin-bottom: 40px; }
+    .about-copy { grid-column: 1 / -1; }
+    .trust { grid-template-columns: 1fr; }
+  }
+
+  /* ── Area ── */
+  .area { position: relative; overflow: hidden; }
+  .area-bg { position: absolute; inset: 0; opacity: .28; }
+  .area-bg img { width: 100%; height: 100%; object-fit: cover; }
+  .area-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to right, var(--ink) 30%, rgba(23,23,23,.6)); }
+  .area .container { position: relative; }
+  .towns { grid-column: 7 / -1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(250,246,239,.15); border: 1px solid rgba(250,246,239,.15); align-self: start; }
+  .towns li { list-style: none; background: rgba(23,23,23,.75); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); padding: 18px 20px; font-family: var(--serif); font-size: 1.2rem; display: flex; align-items: center; gap: 12px; }
+  .towns li.more { font-family: var(--sans); font-size: 0.9rem; color: rgba(250,246,239,.7); }
+  .towns { padding: 0; margin: 0; }
+  @media (max-width: 900px) { .towns { grid-column: 1 / -1; grid-template-columns: 1fr 1fr; } }
+
+  /* ── FAQ ── */
+  .faq details { border-top: 1px solid rgba(23,23,23,.12); }
+  .faq details:last-child { border-bottom: 1px solid rgba(23,23,23,.12); }
+  .faq summary {
+    list-style: none; cursor: pointer; padding: 26px 0;
+    display: flex; justify-content: space-between; gap: 24px; align-items: center;
+    font-family: var(--serif); font-size: clamp(1.2rem, 1.8vw, 1.5rem); letter-spacing: -0.01em;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq .plus { flex-shrink: 0; width: 14px; height: 14px; position: relative; transition: transform .3s; }
+  .faq .plus::before, .faq .plus::after { content: ""; position: absolute; background: var(--orange); }
+  .faq .plus::before { left: 0; right: 0; top: 6px; height: 2px; }
+  .faq .plus::after { top: 0; bottom: 0; left: 6px; width: 2px; }
+  .faq details[open] .plus { transform: rotate(45deg); }
+  .faq details p { padding: 0 40px 28px 0; font-size: 1.05rem; color: rgba(23,23,23,.65); max-width: 58ch; }
+
+  /* ── Contact ── */
+  .contact-intro { grid-column: 1 / span 5; display: flex; flex-direction: column; gap: 24px; }
+  .contact-lines { display: flex; flex-direction: column; margin-top: 10px; border-top: 1px solid rgba(250,246,239,.18); }
+  .contact-lines a { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; border-bottom: 1px solid rgba(250,246,239,.18); }
+  .contact-lines .k { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(250,246,239,.6); }
+  .contact-lines .v { font-family: var(--serif); font-size: 1.3rem; }
+  form { grid-column: 7 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(250,246,239,.15); border: 1px solid rgba(250,246,239,.15); align-self: start; }
+  .field { background: var(--ink); padding: 18px 20px 14px; display: flex; flex-direction: column; gap: 6px; }
+  .field.full { grid-column: 1 / -1; }
+  .field label { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(250,246,239,.6); }
+  .field input, .field textarea, .field select {
+    background: transparent; border: 0; color: var(--cream); font: inherit; font-size: 1.05rem; padding: 4px 0; outline: none; width: 100%;
+  }
+  .field textarea { resize: vertical; min-height: 96px; }
+  .field:focus-within { background: #1f1f1f; box-shadow: inset 3px 0 0 var(--orange); }
+  .field input[type=file] { font-size: 0.9rem; color: rgba(250,246,239,.7); }
+  .field input[type=file]::file-selector-button {
+    font: inherit; font-size: 0.85rem; margin-right: 14px; padding: 8px 14px; border: 1px solid rgba(250,246,239,.4); background: transparent; color: var(--cream); cursor: pointer;
+  }
+  .form-foot { grid-column: 1 / -1; background: var(--ink); padding: 20px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .form-foot small { color: rgba(250,246,239,.55); font-size: 0.82rem; }
+  .form-note { grid-column: 1 / -1; background: var(--orange); color: var(--cream); padding: 16px 20px; display: none; font-weight: 500; }
+  .form-note.show { display: block; }
+  @media (max-width: 900px) {
+    .contact-intro { grid-column: 1 / -1; margin-bottom: 40px; }
+    form { grid-column: 1 / -1; grid-template-columns: 1fr; }
+  }
+
+  /* ── Footer ── */
+  footer { background: var(--ink); color: var(--cream); border-top: 1px solid rgba(250,246,239,.12); padding: 60px 0 40px; }
+  .foot-brand { grid-column: 1 / span 5; display: flex; flex-direction: column; gap: 14px; }
+  .foot-brand p { color: rgba(250,246,239,.6); max-width: 34ch; }
+  .foot-col { grid-column: span 2; display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem; }
+  .foot-col:first-of-type { grid-column: 8 / span 2; }
+  .foot-col .eyebrow { margin-bottom: 6px; }
+  .foot-col a { color: rgba(250,246,239,.75); }
+  .foot-col a:hover { color: var(--cream); }
+  .foot-base { grid-column: 1 / -1; margin-top: 60px; padding-top: 24px; border-top: 1px solid rgba(250,246,239,.12); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 0.8rem; color: rgba(250,246,239,.5); }
+  @media (max-width: 900px) {
+    .foot-brand { grid-column: 1 / -1; margin-bottom: 36px; }
+    .foot-col, .foot-col:first-of-type { grid-column: span 2; }
+  }
+
+  /* Scroll reveal */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-media, .rise { animation: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="#top" class="logo" aria-label="Phillips Handyman &amp; Home Services home">
+      <span class="ph-logo"><span class="script">Phillips</span><span class="heavy">HANDYMAN</span><span class="cond">&amp; HOME SERVICES</span></span>
+    </a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+    <nav class="nav" id="nav">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#area">Service area</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="btn btn-outline-cream">Free quote</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-media"><img src="images/hero.jpg" alt="Kenny standing in the doorway of a newly framed shed, holding a board" fetchpriority="high"></div>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow rise">Handyman · Ulster County, NY</p>
+        <h1 class="rise">One call for the whole to&#8209;do&nbsp;list.</h1>
+        <p class="hero-sub rise rise-2">Carpentry, built&#8209;ins, fences, refinishing, painting and pressure washing, done right by a local pro who shows up when he says he will.</p>
+        <div class="hero-actions rise rise-2">
+          <a href="#contact" class="btn btn-orange">Get a free quote <span class="arrow">→</span></a>
+          <a href="tel:" class="hero-phone">Call or text <strong class="ph">[phone]</strong></a>
+        </div>
+      </div>
+      <div class="hero-cards rise rise-3">
+        <a href="#services" class="hero-card">
+          <span class="hero-card-title"><span class="diamond"></span>Repairs &amp; built&#8209;ins</span>
+          <p>Doors, baseboard, closets, kids&#8217; storage and the small jobs that pile up.</p>
+          <span class="hero-card-link">See services <span class="arrow">→</span></span>
+        </a>
+        <a href="#services" class="hero-card">
+          <span class="hero-card-title"><span class="diamond"></span>Fences &amp; outdoor wood</span>
+          <p>New fences, deck refinishing and cedar shake care for Hudson Valley weather.</p>
+          <span class="hero-card-link">See services <span class="arrow">→</span></span>
+        </a>
+        <a href="#services" class="hero-card">
+          <span class="hero-card-title"><span class="diamond"></span>Paint &amp; pressure wash</span>
+          <p>Clean lines inside, clean siding, patios and driveways outside.</p>
+          <span class="hero-card-link">See services <span class="arrow">→</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 Services -->
+  <section id="services" class="band">
+    <div class="container">
+      <div class="intro-col sticky reveal">
+        <p class="eyebrow">01 · Services</p>
+        <h2 class="section-title">Repairs and projects, inside and&nbsp;out.</h2>
+        <p class="lede muted">Hi, I'm Kenny, owner of Phillips Handyman &amp; Home Services. I help homeowners and property owners across Ulster County get projects done without the hassle. You deal with me directly, you get a clear written quote, and the job gets finished.</p>
+        <div><a href="#contact" class="btn btn-outline-ink">Get a free quote</a></div>
+      </div>
+      <div class="list-col">
+        <div class="numbered reveal">
+          <span class="num"><span>01</span></span>
+          <div><h3>Handyman Repairs</h3><p>The small jobs that pile up. I fix doors that stick, patch drywall, replace trim, hang shelves and mirrors, mount TVs and handle the rest of the honey&#8209;do list. Book a few hours and knock out the whole list at once.</p></div>
+        </div>
+        <div class="numbered reveal">
+          <span class="num"><span>02</span></span>
+          <div><h3>Carpentry</h3><p>I repair and build stairs, railings and custom wood projects. I also fix rotted or damaged wood inside and out before it turns into a bigger problem.</p></div>
+        </div>
+        <div class="numbered reveal">
+          <span class="num"><span>03</span></span>
+          <div><h3>Built&#8209;ins &amp; Custom Storage</h3><p>I design and build closet built&#8209;ins, shelving and storage that fit your space exactly. That includes Montessori kids&#8217; bookshelves and toy storage, built from solid plywood with soft edges and mounted securely to the wall.</p></div>
+        </div>
+        <div class="numbered reveal">
+          <span class="num"><span>04</span></span>
+          <div><h3>Baseboard &amp; Trim Installation</h3><p>I install new baseboard, door casing and trim with tight joints and clean caulk lines. It&#8217;s the finishing detail that makes new floors and fresh paint look complete.</p></div>
+        </div>
+        <div class="numbered reveal">
+          <span class="num"><span>05</span></span>
+          <div><h3>Fence Installation &amp; Repair</h3><p>I build new wood fences, replace damaged sections, fix leaning posts and install gates, all built straight and solid to handle Hudson Valley winters. I'll help you sort out property lines and any town permits before we start.</p></div>
+        </div>
+        <div class="numbered reveal">
+          <span class="num"><span>06</span></span>
+          <div><h3>Deck Refinishing</h3><p>I clean, sand, stain and seal worn decks so the wood is protected and looks new again. A regular refinish adds years to the life of your deck.</p></div>
+        </div>
+        <div class="numbered reveal">
+          <span class="num"><span>07</span></span>
+          <div><h3>Gazebo &amp; Cedar Shake Refinishing</h3><p>I clean and refinish cedar shake roofs, gazebos and other outdoor wood structures. A fresh coat of stain or oil protects the wood from sun and moisture and brings back its warm color.</p></div>
+        </div>
+        <div class="numbered reveal">
+          <span class="num"><span>08</span></span>
+          <div><h3>Interior Painting</h3><p>I paint walls, ceilings, trim, doors and cabinets with clean lines and careful prep. I protect your floors and furniture, and I clean up when I'm done.</p></div>
+        </div>
+        <div class="numbered reveal">
+          <span class="num"><span>09</span></span>
+          <div><h3>Pressure Washing</h3><p>I clean house siding, sidewalks, driveways, decks, patios and fences. It removes dirt, mildew and grime, and it's a great step before painting or staining. It also helps if you're getting ready to sell.</p></div>
+        </div>
+        <div class="numbered extra reveal">
+          <span class="num"><span>+</span></span>
+          <div><h3>Don't see your project?</h3><p>Call or text me. If it's not something I do, I'll tell you up front.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 Work -->
+  <section id="work" class="band band-ink">
+    <div class="container">
+      <div class="work-head">
+        <div class="intro-col reveal">
+          <p class="eyebrow">02 · Recent work</p>
+          <h2 class="section-title">Built straight, finished&nbsp;clean.</h2>
+          <p class="lede muted">Built&#8209;ins, fences, refinishing and custom woodwork from around the Hudson Valley. Every job gets the same care, big or small.</p>
+        </div>
+        <div class="stats reveal">
+          <div class="stat"><div class="stat-num">$0</div><div class="stat-label">Written estimates, always free</div></div>
+          <div class="stat"><div class="stat-num ph">[24h]</div><div class="stat-label">Reply time on photo quotes</div></div>
+          <div class="stat"><div class="stat-num">1</div><div class="stat-label">Person you deal with, start to finish</div></div>
+        </div>
+      </div>
+      <div class="gallery">
+        <figure class="tile wide reveal" style="--c:7;--r:3"><img src="images/wire-fence.jpg" alt="New wood post and wire mesh fence along a gravel drive" loading="lazy" style="object-position:center 45%"><figcaption><span class="diamond"></span>Post &amp; wire fence</figcaption></figure>
+        <figure class="tile reveal" style="--c:5;--r:3"><img src="images/deck-refinish.jpg" alt="Refinished cedar deck with cable railing" loading="lazy" style="object-position:center 60%"><figcaption><span class="diamond"></span>Deck refinish</figcaption></figure>
+        <figure class="tile reveal" style="--c:4;--r:3"><img src="images/montessori-shelf.jpg" alt="Montessori kids bookshelf with toys in a play corner" loading="lazy" style="object-position:center 70%"><figcaption><span class="diamond"></span>Montessori bookshelf</figcaption></figure>
+        <figure class="tile reveal" style="--c:4;--r:3"><img src="images/gazebo-cedar-shake.jpg" alt="Gazebo with a freshly refinished cedar shake roof" loading="lazy" style="object-position:center 50%"><figcaption><span class="diamond"></span>Cedar shake roof</figcaption></figure>
+        <figure class="tile reveal" style="--c:4;--r:3"><img src="images/baseboard.jpg" alt="New baseboard and corner trim on a white oak floor" loading="lazy" style="object-position:center 70%"><figcaption><span class="diamond"></span>Baseboard &amp; trim</figcaption></figure>
+        <figure class="tile wide reveal" style="--c:5;--r:2"><img src="images/woodwork-4.jpg" alt="Custom built-in closet with drawers" loading="lazy" style="object-position:center 55%"><figcaption><span class="diamond"></span>Closet built&#8209;in</figcaption></figure>
+        <figure class="tile reveal" style="--c:4;--r:2"><img src="images/white-oak-floor.jpg" alt="Engineered white oak floor install" loading="lazy" style="object-position:center"><figcaption><span class="diamond"></span>White oak floor</figcaption></figure>
+        <figure class="tile reveal" style="--c:3;--r:2"><img src="images/red-oak-bathroom-shelf.jpg" alt="Red oak recessed bathroom shelf" loading="lazy" style="object-position:center"><figcaption><span class="diamond"></span>Red oak shelf</figcaption></figure>
+        <figure class="tile reveal" style="--c:6;--r:2"><img src="images/woodwork-1.jpg" alt="Plywood furniture edge detail" loading="lazy" style="object-position:center"><figcaption><span class="diamond"></span>Custom furniture</figcaption></figure>
+        <figure class="tile reveal" style="--c:6;--r:2"><img src="images/wing-ming-flower-cooler.jpg" alt="Walk-in flower cooler shelving" loading="lazy" style="object-position:center"><figcaption><span class="diamond"></span>Flower cooler build</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 About -->
+  <section id="about" class="band">
+    <div class="container">
+      <div class="about-photo reveal">
+        <img src="images/closet-detail.jpg" alt="Closeup of custom closet drawers" loading="lazy">
+        <span class="tag"><span class="diamond"></span>Swap in a photo of you</span>
+      </div>
+      <div class="about-copy reveal">
+        <p class="eyebrow">03 · About</p>
+        <h2 class="section-title">When you call me, you get&nbsp;me.</h2>
+        <div class="body">
+          <p>I'm Kenny, and I've been fixing and building things for <span class="ph">[X years]</span>. I started <span class="ph">[your real story]</span>, and I've worked on everything from small repairs to full fence builds.</p>
+          <p>I started Phillips Handyman &amp; Home Services because I saw how hard it is to find someone reliable for the jobs that are too small for a big contractor but too big to do yourself. I return calls, show up on time, give you a fair written price, and leave your place cleaner than I found it.</p>
+          <p>I live in <span class="ph">[Town]</span> and work across Ulster County. When I'm not on a job, you'll find me <span class="ph">[hiking the Gunks, etc.]</span>.</p>
+        </div>
+        <ul class="trust">
+          <li><span class="diamond"></span>Local to Ulster County</li>
+          <li><span class="diamond"></span>Free written estimates</li>
+          <li><span class="diamond"></span><span class="ph">Fully insured</span></li>
+          <li><span class="diamond"></span>Clean, respectful work</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 Service area -->
+  <section id="area" class="band band-ink area">
+    <div class="area-bg"><img src="images/white-oak-floor.jpg" alt="" loading="lazy"></div>
+    <div class="container">
+      <div class="intro-col reveal">
+        <p class="eyebrow">04 · Service area</p>
+        <h2 class="section-title">Proudly serving Ulster&nbsp;County.</h2>
+        <p class="lede muted">Based in Wallkill and proudly serving homeowners across southern and central Ulster County. Not sure if I cover your town? Just ask.</p>
+        <div><a href="#contact" class="btn btn-outline-cream">Ask about your town</a></div>
+      </div>
+      <ul class="towns reveal">
+        <li><span class="diamond"></span>Wallkill</li>
+        <li><span class="diamond"></span>Shawangunk</li>
+        <li><span class="diamond"></span>Gardiner</li>
+        <li><span class="diamond"></span>New Paltz</li>
+        <li><span class="diamond"></span>Plattekill</li>
+        <li><span class="diamond"></span>Marlboro</li>
+        <li><span class="diamond"></span>Highland</li>
+        <li><span class="diamond"></span>Lloyd</li>
+        <li><span class="diamond"></span>Rosendale</li>
+        <li><span class="diamond"></span>Stone Ridge</li>
+        <li><span class="diamond"></span>Marbletown</li>
+        <li><span class="diamond"></span>Accord</li>
+        <li><span class="diamond"></span>Kerhonkson</li>
+        <li><span class="diamond"></span>Ellenville</li>
+        <li><span class="diamond"></span>Esopus</li>
+        <li><span class="diamond"></span>Port Ewen</li>
+        <li><span class="diamond"></span>Kingston</li>
+        <li class="more">and surrounding areas</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 05 FAQ -->
+  <section id="faq" class="band">
+    <div class="container">
+      <div class="intro-col sticky reveal">
+        <p class="eyebrow">05 · FAQ</p>
+        <h2 class="section-title">Straight answers, up&nbsp;front.</h2>
+      </div>
+      <div class="list-col faq reveal">
+        <details open><summary>Do you give free estimates?<span class="plus"></span></summary><p>Yes. Send photos for a quick ballpark, or I'll come out for larger jobs and give you a written quote.</p></details>
+        <details><summary>Are you insured?<span class="plus"></span></summary><p><span class="ph">[Yes, I carry general liability insurance.]</span></p></details>
+        <details><summary>Do you do small jobs?<span class="plus"></span></summary><p>Yes. Small jobs are a big part of what I do. Bundle a few together to get the most out of a visit.</p></details>
+        <details><summary>Do you handle permits for fences?<span class="plus"></span></summary><p>Yes. I'll check your town's requirements and pull permits when they're needed.</p></details>
+        <details><summary>Do you do electrical or plumbing?<span class="plus"></span></summary><p>No. Those need licensed trades in Ulster County, and I'm happy to refer you to someone I trust.</p></details>
+        <details><summary>How do I pay?<span class="plus"></span></summary><p><span class="ph">[Card, check, cash, Venmo, Zelle]</span>. Larger jobs need a deposit to schedule.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="band band-ink">
+    <div class="container">
+      <div class="contact-intro reveal">
+        <p class="eyebrow">Get a free quote</p>
+        <h2 class="section-title">Ready to get your project&nbsp;done?</h2>
+        <p class="lede muted">Call or text, email, or fill out the form with a few photos and I'll get back to you within <span class="ph">[24 hours]</span>.</p>
+        <div class="contact-lines">
+          <a href="tel:"><span class="k">Call or text</span><span class="v ph">[phone]</span></a>
+          <a href="mailto:"><span class="k">Email</span><span class="v ph">[email]</span></a>
+        </div>
+      </div>
+      <form class="reveal" id="quoteForm">
+        <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
+        <div class="field full"><label for="f-town">Town</label><input id="f-town" name="town" placeholder="Kingston, New Paltz, Woodstock…"></div>
+        <div class="field full"><label for="f-job">What do you need done?</label><textarea id="f-job" name="job" required></textarea></div>
+        <div class="field full"><label for="f-photos">Photos of the job</label><input id="f-photos" name="photos" type="file" accept="image/*" multiple></div>
+        <div class="form-foot">
+          <small>Photos help me give you a faster, more accurate price.</small>
+          <button type="submit" class="btn btn-orange">Send request <span class="arrow">→</span></button>
+        </div>
+        <div class="form-note" id="formNote" role="status">Thanks! Connect this form to a service before launch so requests reach you.</div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-brand">
+      <a href="#top" class="logo" aria-label="Phillips Handyman &amp; Home Services home"><span class="ph-logo"><span class="script">Phillips</span><span class="heavy">HANDYMAN</span><span class="cond">&amp; HOME SERVICES</span><span class="tag">ULSTER COUNTY, N.Y.</span></span></a>
+      <p>One reliable local person for the repairs and projects on your list, inside and out.</p>
+    </div>
+    <div class="foot-col">
+      <span class="eyebrow">Services</span>
+      <a href="#services">Handyman repairs</a>
+      <a href="#services">Built&#8209;ins &amp; storage</a>
+      <a href="#services">Fences</a>
+      <a href="#services">Deck &amp; gazebo refinishing</a>
+      <a href="#services">Painting</a>
+      <a href="#services">Pressure washing</a>
+    </div>
+    <div class="foot-col">
+      <span class="eyebrow">Company</span>
+      <a href="#about">About</a>
+      <a href="#work">Recent work</a>
+      <a href="#area">Service area</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="foot-col">
+      <span class="eyebrow">Contact</span>
+      <a href="tel:" class="ph">[phone]</a>
+      <a href="mailto:" class="ph">[email]</a>
+      <a href="#contact">Free quote</a>
+    </div>
+    <div class="foot-base">
+      <span>© <span id="year">2026</span> Phillips Handyman &amp; Home Services · Ulster County, NY</span>
+      <span>Handyman services. Electrical and plumbing referred to licensed trades.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  const menuBtn = document.querySelector('.menu-btn');
+  const nav = document.getElementById('nav');
+  menuBtn.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open);
+  });
+  nav.addEventListener('click', e => { if (e.target.closest('a')) nav.classList.remove('open'); });
+
+  // Scroll reveal
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Form placeholder until a backend is connected
+  document.getElementById('quoteForm').addEventListener('submit', e => {
+    e.preventDefault();
+    document.getElementById('formNote').classList.add('show');
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
