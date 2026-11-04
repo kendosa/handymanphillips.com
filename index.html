@@ -270,6 +270,34 @@
   .numbered p { margin-top: 8px; font-size: 1.05rem; line-height: 1.6; color: rgba(23,23,23,.62); max-width: 52ch; }
   .numbered.extra h3 { font-style: italic; }
 
+  /* ── Estimator ── */
+  .est[hidden], .est [hidden] { display: none !important; }
+  .est-toggle { margin-top: 16px; background: none; border: 0; padding: 0; font: inherit; font-weight: 500; color: var(--ink); cursor: pointer; display: inline-flex; gap: 8px; align-items: center; border-bottom: 1px solid var(--orange); padding-bottom: 2px; }
+  .est-toggle .arrow { transition: transform .25s; display: inline-block; }
+  .est-toggle[aria-expanded="true"] .arrow { transform: rotate(90deg); }
+  .svc-body { flex: 1; min-width: 0; }
+  .est { margin-top: 22px; background: rgba(23,23,23,.04); border: 1px solid rgba(23,23,23,.1); padding: 22px; display: grid; gap: 20px; }
+  .est-label { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(23,23,23,.55); margin-bottom: 10px; display: block; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { font: inherit; font-size: 0.92rem; padding: 8px 14px; border: 1px solid rgba(23,23,23,.25); background: var(--cream); color: var(--ink); cursor: pointer; transition: background .15s, color .15s, border-color .15s; }
+  .chip:hover { border-color: var(--ink); }
+  .chip[aria-pressed="true"] { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+  .est-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 600px) { .est-row { grid-template-columns: 1fr; } }
+  .stepper { display: flex; align-items: stretch; border: 1px solid rgba(23,23,23,.25); background: var(--cream); width: max-content; }
+  .stepper button { font: inherit; font-size: 1.1rem; width: 42px; border: 0; background: none; cursor: pointer; color: var(--ink); }
+  .stepper button:hover { background: rgba(23,23,23,.06); }
+  .stepper input { width: 72px; border: 0; border-left: 1px solid rgba(23,23,23,.15); border-right: 1px solid rgba(23,23,23,.15); text-align: center; font: inherit; background: none; color: var(--ink); padding: 8px 0; -moz-appearance: textfield; }
+  .stepper input::-webkit-inner-spin-button, .stepper input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+  .est select, .est textarea { font: inherit; font-size: 0.98rem; color: var(--ink); background: var(--cream); border: 1px solid rgba(23,23,23,.25); padding: 9px 12px; width: 100%; }
+  .est textarea { min-height: 84px; resize: vertical; }
+  .est :focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+  .est-out { border-left: 3px solid var(--orange); padding: 6px 0 6px 18px; }
+  .est-price { font-family: var(--serif); font-size: clamp(1.9rem, 3.2vw, 2.5rem); letter-spacing: -0.02em; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .est-fine { margin-top: 6px; font-size: 0.88rem; color: rgba(23,23,23,.58); max-width: 46ch; }
+  .est-send { justify-self: start; }
+  .est-sent { font-size: 0.88rem; color: var(--orange-deep); font-weight: 500; }
+
   /* ── Work ── */
   .work-head { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; align-items: end; margin-bottom: clamp(40px, 6vw, 70px); }
   .work-head .intro-col { grid-column: 1 / span 6; }
@@ -469,53 +497,41 @@
       <div class="intro-col sticky reveal">
         <p class="eyebrow">01 · Services</p>
         <h2 class="section-title">Repairs and projects, inside and&nbsp;out.</h2>
-        <p class="lede muted">Hi, I'm Kenny, owner of Phillips Handyman &amp; Home Services. I help homeowners and property owners across Ulster County get projects done without the hassle. You deal with me directly, you get a clear written quote, and the job gets finished.</p>
+        <p class="lede muted">Hi, I'm Kenny, owner of Phillips Handyman &amp; Home Services. I help homeowners and property owners across Ulster County get projects done without the hassle. You deal with me directly, you get a clear written quote, and the job gets finished. Pick a service for a rough price on the&nbsp;spot.</p>
         <div><a href="#contact" class="btn btn-outline-ink">Get a free quote</a></div>
       </div>
       <div class="list-col">
-        <div class="numbered reveal">
+        <div class="numbered svc reveal" data-svc="repairs">
           <span class="num"><span>01</span></span>
-          <div><h3>Handyman Repairs</h3><p>The small jobs that pile up. I fix doors that stick, patch drywall, replace trim and handle the rest of the to&#8209;do list. Book a few hours and knock out the whole list at once.</p></div>
+          <div class="svc-body">
+            <h3>Repairs &amp; Mounting</h3><p>TVs, shelves, mirrors and art hung level and anchored right, including Vitsœ 606 shelving. Plus the drywall patches, sticky doors and small fixes on your to&#8209;do list.</p>
+            <button type="button" class="est-toggle" aria-expanded="false" aria-controls="est-repairs">Get a rough price <span class="arrow">→</span></button>
+            <div class="est" id="est-repairs" hidden></div>
+          </div>
         </div>
-        <div class="numbered reveal">
+        <div class="numbered svc reveal" data-svc="carpentry">
           <span class="num"><span>02</span></span>
-          <div><h3>Mounting &amp; Hanging</h3><p>I mount TVs, shelves and mirrors level and anchored into studs or the right hardware for your walls. That includes installing and adjusting Vitsœ 606 shelving systems, with wall tracks set dead level so every shelf lines up.</p></div>
+          <div class="svc-body">
+            <h3>Carpentry &amp; Installs</h3><p>Closet built&#8209;ins, Montessori kids&#8217; shelves, baseboard and trim, and new windows and doors. Built tight, set plumb and finished clean.</p>
+            <button type="button" class="est-toggle" aria-expanded="false" aria-controls="est-carpentry">Get a rough price <span class="arrow">→</span></button>
+            <div class="est" id="est-carpentry" hidden></div>
+          </div>
         </div>
-        <div class="numbered reveal">
+        <div class="numbered svc reveal" data-svc="outdoor">
           <span class="num"><span>03</span></span>
-          <div><h3>Carpentry</h3><p>I repair and build stairs, railings and custom wood projects. I also fix rotted or damaged wood inside and out before it turns into a bigger problem.</p></div>
+          <div class="svc-body">
+            <h3>Fences &amp; Outdoor Wood</h3><p>New wood fences, repairs and gates built for Hudson Valley winters. I also refinish decks, gazebos and cedar shake so the wood lasts.</p>
+            <button type="button" class="est-toggle" aria-expanded="false" aria-controls="est-outdoor">Get a rough price <span class="arrow">→</span></button>
+            <div class="est" id="est-outdoor" hidden></div>
+          </div>
         </div>
-        <div class="numbered reveal">
+        <div class="numbered svc reveal" data-svc="paint">
           <span class="num"><span>04</span></span>
-          <div><h3>Built&#8209;ins &amp; Custom Storage</h3><p>I design and build closet built&#8209;ins, shelving and storage that fit your space exactly. That includes Montessori kids&#8217; bookshelves and toy storage, built from solid plywood with soft edges and mounted securely to the wall.</p></div>
-        </div>
-        <div class="numbered reveal">
-          <span class="num"><span>05</span></span>
-          <div><h3>Window &amp; Door Installation</h3><p>I install replacement windows and interior and exterior doors, set plumb and square and sealed against drafts. I can also rehang doors that rub, swap hardware and replace worn weatherstripping.</p></div>
-        </div>
-        <div class="numbered reveal">
-          <span class="num"><span>06</span></span>
-          <div><h3>Baseboard &amp; Trim Installation</h3><p>I install new baseboard, door casing and trim with tight joints and clean caulk lines. It&#8217;s the finishing detail that makes new floors and fresh paint look complete.</p></div>
-        </div>
-        <div class="numbered reveal">
-          <span class="num"><span>07</span></span>
-          <div><h3>Fence Installation &amp; Repair</h3><p>I build new wood fences, replace damaged sections, fix leaning posts and install gates, all built straight and solid to handle Hudson Valley winters. I'll help you sort out property lines and any town permits before we start.</p></div>
-        </div>
-        <div class="numbered reveal">
-          <span class="num"><span>08</span></span>
-          <div><h3>Deck Refinishing</h3><p>I clean, sand, stain and seal worn decks so the wood is protected and looks new again. A regular refinish adds years to the life of your deck.</p></div>
-        </div>
-        <div class="numbered reveal">
-          <span class="num"><span>09</span></span>
-          <div><h3>Gazebo &amp; Cedar Shake Refinishing</h3><p>I clean and refinish cedar shake roofs, gazebos and other outdoor wood structures. A fresh coat of stain or oil protects the wood from sun and moisture and brings back its warm color.</p></div>
-        </div>
-        <div class="numbered reveal">
-          <span class="num"><span>10</span></span>
-          <div><h3>Interior Painting</h3><p>I paint walls, ceilings, trim, doors and cabinets with clean lines and careful prep. I protect your floors and furniture, and I clean up when I'm done.</p></div>
-        </div>
-        <div class="numbered reveal">
-          <span class="num"><span>11</span></span>
-          <div><h3>Pressure Washing</h3><p>I clean house siding, sidewalks, driveways, decks, patios and fences. It removes dirt, mildew and grime, and it's a great step before painting or staining. It also helps if you're getting ready to sell.</p></div>
+          <div class="svc-body">
+            <h3>Painting &amp; Pressure Washing</h3><p>Interior rooms and cabinets with careful prep and clean lines. Pressure washing for siding, driveways, patios, decks and fences.</p>
+            <button type="button" class="est-toggle" aria-expanded="false" aria-controls="est-paint">Get a rough price <span class="arrow">→</span></button>
+            <div class="est" id="est-paint" hidden></div>
+          </div>
         </div>
         <div class="numbered extra reveal">
           <span class="num"><span>+</span></span>
@@ -668,12 +684,10 @@
     </div>
     <div class="foot-col">
       <span class="eyebrow">Services</span>
-      <a href="#services">Handyman repairs</a>
-      <a href="#services">Built&#8209;ins &amp; storage</a>
-      <a href="#services">Fences</a>
-      <a href="#services">Deck &amp; gazebo refinishing</a>
-      <a href="#services">Painting</a>
-      <a href="#services">Pressure washing</a>
+      <a href="#services">Repairs &amp; mounting</a>
+      <a href="#services">Carpentry &amp; installs</a>
+      <a href="#services">Fences &amp; outdoor wood</a>
+      <a href="#services">Painting &amp; pressure washing</a>
     </div>
     <div class="foot-col">
       <span class="eyebrow">Company</span>
@@ -716,6 +730,106 @@
     e.preventDefault();
     document.getElementById('formNote').classList.add('show');
   });
+
+  // Rough price estimator. Prices are generated from a private pricing model
+  // (not in this repo). Edit rates there and re-run it, never by hand here.
+  const PRICES = /* PRICES:START */{"min":175,"round":25,"services":[{"id":"repairs","name":"Repairs & Mounting","tasks":[{"id":"tv","name":"Mount a TV","unit":"TV","qty":[1,1,6,1],"lab":[80.0,160.0],"mat":[10,30],"cond":[["Drywall",1.0],["Plaster or brick",1.4],["Over a fireplace",1.6]]},{"id":"shelf","name":"Hang shelves","unit":"shelf","qty":[3,1,20,1],"lab":[40.0,80.0],"mat":[5,15],"cond":[["Drywall",1.0],["Plaster or brick",1.4]]},{"id":"vitsoe","name":"Vitsœ 606 shelving","unit":"bay","qty":[3,1,12,1],"lab":[92.0,161.0],"mat":[5,15],"cond":[["New install",1.0],["Move or reconfigure",0.8],["Plaster or brick wall",1.35]]},{"id":"mirror","name":"Hang mirrors or art","unit":"piece","qty":[2,1,20,1],"lab":[32.0,80.0],"mat":[5,15],"cond":[["Standard size",1.0],["Large or heavy",1.6]]},{"id":"drywall","name":"Patch drywall","unit":"patch","qty":[2,1,15,1],"lab":[88.0,176.0],"mat":[10,25],"cond":[["Small holes",0.7],["Fist size",1.0],["Bigger than a plate",1.6]]},{"id":"list","name":"Small repair list","unit":"item","qty":[4,1,20,1],"lab":[40.0,80.0],"mat":[5,20],"cond":[]}]},{"id":"carpentry","name":"Carpentry & Installs","tasks":[{"id":"builtin","name":"Closet or built‑in","unit":"ft wide","qty":[6,2,20,1],"lab":[416.0,676.0],"mat":[70,140],"cond":[["Painted plywood",1.0],["Stain grade wood",1.25]]},{"id":"montessori","name":"Montessori kids’ shelf","unit":"unit","qty":[1,1,6,1],"lab":[384.0,672.0],"mat":[80,160],"cond":[]},{"id":"trim","name":"Baseboard & trim","unit":"ft","qty":[100,20,1000,10],"lab":[7.36,12.88],"mat":[1.5,3.5],"cond":[["Install only",1.0],["Remove old trim first",1.3]]},{"id":"window","name":"Replace a window","unit":"window","qty":[1,1,15,1],"lab":[250.0,450.0],"mat":[30,60],"cond":[["Ground floor",1.0],["Second floor",1.35]]},{"id":"door-int","name":"Interior door","unit":"door","qty":[1,1,15,1],"lab":[184.0,322.0],"mat":[20,45],"cond":[["Prehung",1.0],["Slab into old frame",1.2]]},{"id":"door-ext","name":"Exterior door","unit":"door","qty":[1,1,4,1],"lab":[468.0,780.0],"mat":[60,140],"cond":[]}]},{"id":"outdoor","name":"Fences & Outdoor Wood","tasks":[{"id":"fence-new","name":"New wood fence","unit":"ft","qty":[50,10,600,10],"lab":[28.0,45.0],"mat":[20,34],"cond":[["Easy digging",1.0],["Rocky soil or slope",1.4]]},{"id":"fence-fix","name":"Fence repair","unit":"section","qty":[2,1,20,1],"lab":[144.0,288.0],"mat":[40,90],"cond":[]},{"id":"gate","name":"Gate install","unit":"gate","qty":[1,1,4,1],"lab":[300.0,550.0],"mat":[120,260],"cond":[]},{"id":"deck","name":"Deck refinishing","unit":"sq ft","qty":[300,50,2000,25],"lab":[4.32,7.56],"mat":[0.6,1.1],"cond":[["Light weathering",1.0],["Peeling old stain",1.6]]},{"id":"cedar","name":"Gazebo or cedar shake","unit":"sq ft","qty":[200,50,3000,25],"lab":[5.8,10.44],"mat":[0.7,1.3],"cond":[["Reachable from the ground",1.0],["Ladder or roof work",1.4]]}]},{"id":"paint","name":"Painting & Pressure Washing","tasks":[{"id":"room","name":"Paint a room","unit":"room","qty":[1,1,12,1],"lab":[480.0,800.0],"mat":[60,120],"cond":[["Walls only",1.0],["Walls, ceiling and trim",1.65]]},{"id":"cabinets","name":"Paint cabinets","unit":"door or drawer","qty":[20,4,80,1],"lab":[86.4,140.4],"mat":[6,12],"cond":[]},{"id":"wash","name":"Pressure washing","unit":"sq ft","qty":[800,100,5000,50],"lab":[0.58,1.15],"mat":[0.03,0.07],"cond":[["Driveway, walk or patio",1.0],["Siding",1.25],["Deck or fence",1.15]]}]}]}/* PRICES:END */;
+  (() => {
+    if (!PRICES || !PRICES.services) return;
+    const $ = (tag, attrs = {}, html = '') => { const el = document.createElement(tag); Object.assign(el, attrs); if (html) el.innerHTML = html; return el; };
+    const fmt = n => '$' + n.toLocaleString('en-US');
+    const roundStep = n => n < 1000 ? 25 : n < 5000 ? 50 : 100;
+    const plural = (u, q) => q === 1 || /ft$/.test(u) ? u : u.replace(/^(\w+)/, w => w.endsWith('s') ? w + 'es' : w + 's');
+    const qtyLabel = u => u === 'ft' ? 'Length in feet' : u === 'sq ft' ? 'Area in square feet' : u === 'ft wide' ? 'Width in feet' : 'How many ' + plural(u, 2);
+    const jobField = document.getElementById('f-job');
+
+    PRICES.services.forEach(svc => {
+      const card = document.querySelector(`.svc[data-svc="${svc.id}"]`);
+      if (!card) return;
+      const toggle = card.querySelector('.est-toggle');
+      const panel = card.querySelector('.est');
+      const state = { task: svc.tasks[0], qty: svc.tasks[0].qty[0], cond: 0 };
+
+      const chipsWrap = $('div'); chipsWrap.append($('span', { className: 'est-label' }, 'What do you need'));
+      const chips = $('div', { className: 'chips', role: 'group' });
+      chipsWrap.append(chips);
+
+      const row = $('div', { className: 'est-row' });
+      const qWrap = $('div'); const qLab = $('label', { className: 'est-label', htmlFor: `q-${svc.id}` });
+      const stepper = $('div', { className: 'stepper' });
+      const minus = $('button', { type: 'button', ariaLabel: 'Less' }, '&minus;');
+      const qIn = $('input', { id: `q-${svc.id}`, type: 'number', inputMode: 'numeric' });
+      const plus = $('button', { type: 'button', ariaLabel: 'More' }, '+');
+      stepper.append(minus, qIn, plus); qWrap.append(qLab, stepper);
+      const cWrap = $('div'); const cLab = $('label', { className: 'est-label', htmlFor: `c-${svc.id}` }, 'Job conditions');
+      const cSel = $('select', { id: `c-${svc.id}` }); cWrap.append(cLab, cSel);
+      row.append(qWrap, cWrap);
+
+      const nWrap = $('div');
+      nWrap.append($('label', { className: 'est-label', htmlFor: `n-${svc.id}` }, 'Tell me more about the job'));
+      const notes = $('textarea', { id: `n-${svc.id}`, placeholder: 'Sizes, materials, access, timing, anything that helps' });
+      nWrap.append(notes);
+
+      const outBox = $('div', { className: 'est-out' });
+      outBox.setAttribute('aria-live', 'polite');
+      outBox.append($('span', { className: 'est-label' }, 'Rough estimate'));
+      const price = $('div', { className: 'est-price' });
+      outBox.append(price, $('p', { className: 'est-fine' }, 'Labor and basic materials, based on similar jobs. You get a firm written price once I see the job or your photos.'));
+
+      const send = $('button', { type: 'button', className: 'btn btn-orange est-send' }, 'Send this for a firm quote <span class="arrow">→</span>');
+      const sent = $('p', { className: 'est-sent', hidden: true }, 'Added to your quote request below.');
+      panel.append(chipsWrap, row, nWrap, outBox, send, sent);
+
+      const calc = () => {
+        const t = state.task, m = t.cond.length ? t.cond[state.cond][1] : 1, q = state.qty;
+        let lo = q * (t.lab[0] * m + t.mat[0]), hi = q * (t.lab[1] * m + t.mat[1]);
+        lo = Math.max(lo, PRICES.min); hi = Math.max(hi, lo * 1.25);
+        lo = Math.floor(lo / roundStep(lo)) * roundStep(lo);
+        hi = Math.ceil(hi / roundStep(hi)) * roundStep(hi);
+        return [lo, hi];
+      };
+      const render = () => {
+        const t = state.task;
+        [...chips.children].forEach(c => c.setAttribute('aria-pressed', c.dataset.id === t.id));
+        qLab.textContent = qtyLabel(t.unit);
+        qIn.min = t.qty[1]; qIn.max = t.qty[2]; qIn.step = t.qty[3]; qIn.value = state.qty;
+        cWrap.hidden = !t.cond.length;
+        cSel.innerHTML = t.cond.map((c, i) => `<option value="${i}"${i === state.cond ? ' selected' : ''}>${c[0]}</option>`).join('');
+        const [lo, hi] = calc();
+        price.textContent = `${fmt(lo)} to ${fmt(hi)}`;
+        sent.hidden = true;
+      };
+      svc.tasks.forEach(t => {
+        const c = $('button', { type: 'button', className: 'chip' }, t.name);
+        c.dataset.id = t.id;
+        c.addEventListener('click', () => { state.task = t; state.qty = t.qty[0]; state.cond = 0; render(); });
+        chips.append(c);
+      });
+      const setQty = v => { const t = state.task; v = Math.round(v / t.qty[3]) * t.qty[3]; state.qty = Math.min(t.qty[2], Math.max(t.qty[1], v || t.qty[1])); render(); };
+      minus.addEventListener('click', () => setQty(state.qty - state.task.qty[3]));
+      plus.addEventListener('click', () => setQty(state.qty + state.task.qty[3]));
+      qIn.addEventListener('change', () => setQty(+qIn.value));
+      cSel.addEventListener('change', () => { state.cond = +cSel.value; render(); });
+
+      toggle.addEventListener('click', () => {
+        const open = panel.hidden;
+        panel.hidden = !open;
+        toggle.setAttribute('aria-expanded', open);
+        if (open) render();
+      });
+
+      send.addEventListener('click', () => {
+        const t = state.task, [lo, hi] = calc();
+        const cond = t.cond.length ? `, ${t.cond[state.cond][0].toLowerCase()}` : '';
+        let line = `${t.name}, ${state.qty} ${plural(t.unit, state.qty)}${cond} (estimate ${fmt(lo)} to ${fmt(hi)})`;
+        if (notes.value.trim()) line += `\nNotes. ${notes.value.trim()}`;
+        jobField.value = jobField.value.trim() ? jobField.value.trim() + '\n\n' + line : line;
+        sent.hidden = false;
+        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => jobField.focus({ preventScroll: true }), 700);
+      });
+    });
+  })();
 
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
