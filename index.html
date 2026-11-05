@@ -139,8 +139,10 @@
   .ph-logo .heavy { margin-top: calc(var(--wm) * 0.1); }
   /* logo box is only as tall as the button so it never stretches the header row; the
      lines below PHILLIPS hang out of it. Offset cancels the SVG's top padding. */
-  .site-header .logo { align-self: center; height: var(--nav-btn-h); align-items: flex-start; margin-top: calc(var(--nav-btn-h) * -0.0132); }
-  .site-header .ph-logo { --wm: var(--nav-btn-h); }
+  /* Header: the WHOLE lockup (top of PHILLIPS to baseline of the HANDYMAN line, 111.46 SVG
+     units) = Free quote button height. PHILLIPS is 71.35 of those units, hence 0.6401. */
+  .site-header .logo { align-self: center; height: var(--nav-btn-h); align-items: flex-start; margin-top: calc(var(--nav-btn-h) * -0.00845); }
+  .site-header .ph-logo { --wm: calc(var(--nav-btn-h) * 0.6401); }
   .foot-brand .ph-logo { --wm: 92px; color: var(--orange); margin: 14px 0 18px; }
   /* Matches .hero-sub */
   .nav { grid-column: 5 / -1; display: flex; justify-content: flex-end; align-items: center; gap: clamp(20px, 2.2vw, 34px); font-family: var(--sans); font-size: var(--nav-f); font-weight: 400; color: rgba(250,246,239,.85); }
@@ -160,8 +162,8 @@
   .menu-btn span { display: block; width: 13px; height: 1px; background: var(--cream); }
   @media (max-width: 900px) {
     .logo { grid-column: span 3; }
-    .site-header .logo { height: 40px; margin-top: -0.5px; }
-    .site-header .ph-logo { --wm: 40px; --sub: 10px; }
+    .site-header .logo { height: 44px; margin-top: -0.4px; }
+    .site-header .ph-logo { --wm: calc(44px * 0.6401); }
     .menu-btn { display: flex; }
     .nav {
       position: absolute; top: var(--header-h); left: 0; right: 0;
