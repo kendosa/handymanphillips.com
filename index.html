@@ -111,38 +111,37 @@
   .site-header .container { align-items: center; height: var(--header-h); }
   .logo { grid-column: span 4; display: flex; align-items: center; justify-self: start; }
 
-  /* Phillips lockup. Custom PHILLIPS wordmark (images/phillips-wordmark.svg) + Anton.
-     Previous Norican script version is git tag logo-option-b. */
+  /* Phillips lockup, option D. Custom PHILLIPS wordmark (images/phillips-wordmark.svg) + Anton.
+     PHILLIPS ink height = header Free quote button height. Every other line is one
+     smaller, shared size. Earlier versions are git tags logo-option-b (script) and
+     logo-option-c (Anton, big HANDYMAN). */
+  :root {
+    --nav-f: clamp(1.05rem, 1.6vw, 1.3rem);
+    --nav-btn-h: calc(var(--nav-f) * 1.55 + 22px); /* line-height 1.55, 9px padding x2, 2px border x2 */
+  }
   .ph-logo {
-    --s: 1;
+    --wm: 110px;                        /* PHILLIPS ink height */
+    --sub: calc(var(--wm) * 0.235);     /* the one size for every other line */
     display: inline-flex; flex-direction: column; align-items: center;
     color: currentColor; line-height: 1; text-align: center;
-    font-family: "Anton", "Bebas Neue", Impact, sans-serif; font-weight: 400; text-transform: uppercase;
+    font-family: "Anton", Impact, sans-serif; font-weight: 400; text-transform: uppercase;
   }
-  .ph-logo .wordmark { display: block; width: calc(600px * var(--s)); height: auto; overflow: visible; }
-  .ph-logo .heavy {
-    font-size: calc(112px * var(--s));
-    letter-spacing: 0.115em;
-    margin-right: -0.115em;
-    line-height: 1;
-    margin-top: calc(22px * var(--s));
+  /* SVG ink spans 71.35 of its 73.23 viewBox height */
+  .ph-logo .wordmark { display: block; height: calc(var(--wm) / 0.9743); width: auto; overflow: visible; }
+  .ph-logo .heavy, .ph-logo .cond, .ph-logo .tag {
+    font-size: var(--sub);
+    letter-spacing: 0.22em;
+    margin-right: -0.22em;
+    line-height: 1.15;
   }
-  .ph-logo .cond {
-    font-size: calc(50px * var(--s));
-    letter-spacing: 0.2em;
-    margin-right: -0.2em;
-    margin-top: calc(18px * var(--s));
-  }
-  .ph-logo .tag {
-    font-size: calc(26px * var(--s));
-    letter-spacing: 0.42em;
-    margin-right: -0.42em;
-    margin-top: calc(14px * var(--s));
-  }
-  .site-header .ph-logo { --s: .24; margin-top: 18px; }
-  .foot-brand .ph-logo { --s: .5; color: var(--orange); margin: 14px 0 18px; }
+  .ph-logo .heavy { margin-top: calc(var(--wm) * 0.1); }
+  /* logo box is only as tall as the button so it never stretches the header row; the
+     lines below PHILLIPS hang out of it. Offset cancels the SVG's top padding. */
+  .site-header .logo { align-self: center; height: var(--nav-btn-h); align-items: flex-start; margin-top: calc(var(--nav-btn-h) * -0.0132); }
+  .site-header .ph-logo { --wm: var(--nav-btn-h); }
+  .foot-brand .ph-logo { --wm: 92px; color: var(--orange); margin: 14px 0 18px; }
   /* Matches .hero-sub */
-  .nav { grid-column: 5 / -1; display: flex; justify-content: flex-end; align-items: center; gap: clamp(20px, 2.2vw, 34px); font-family: var(--sans); font-size: clamp(1.05rem, 1.6vw, 1.3rem); font-weight: 400; color: rgba(250,246,239,.85); }
+  .nav { grid-column: 5 / -1; display: flex; justify-content: flex-end; align-items: center; gap: clamp(20px, 2.2vw, 34px); font-family: var(--sans); font-size: var(--nav-f); font-weight: 400; color: rgba(250,246,239,.85); }
   .nav a:hover { color: var(--cream); }
   .nav a:not(.btn) { position: relative; }
   .nav a:not(.btn)::after {
@@ -159,7 +158,8 @@
   .menu-btn span { display: block; width: 13px; height: 1px; background: var(--cream); }
   @media (max-width: 900px) {
     .logo { grid-column: span 3; }
-    .site-header .ph-logo { --s: .19; margin-top: 12px; }
+    .site-header .logo { height: 40px; margin-top: -0.5px; }
+    .site-header .ph-logo { --wm: 40px; --sub: 10px; }
     .menu-btn { display: flex; }
     .nav {
       position: absolute; top: var(--header-h); left: 0; right: 0;
