@@ -113,33 +113,31 @@
 
   /* Phillips lockup. Custom PHILLIPS wordmark (images/phillips-wordmark.svg) + Anton.
      Previous Norican script version is git tag logo-option-b. */
-  /* Scale rule of thirds, by cap height. PHILLIPS takes 2/3 of the stack; the last
-     third splits again 2/3 HANDYMAN, 1/3 & HOME SERVICES. So caps run 6 : 2 : 1.
-     --u is one unit = PHILLIPS ink height / 6. Anton cap height = 0.859375em.
-     Gaps between lines are 1 unit. */
   .ph-logo {
     --s: 1;
-    --u: calc(23.43px * var(--s));
     display: inline-flex; flex-direction: column; align-items: center;
     color: currentColor; line-height: 1; text-align: center;
-    font-family: "Anton", Impact, sans-serif; font-weight: 400; text-transform: uppercase;
+    font-family: "Anton", "Bebas Neue", Impact, sans-serif; font-weight: 400; text-transform: uppercase;
   }
-  .ph-logo .wordmark { display: block; width: calc(720px * var(--s)); height: auto; overflow: visible; }
-  .ph-logo .heavy, .ph-logo .cond, .ph-logo .tag { text-box: trim-both cap alphabetic; margin-top: var(--u); }
+  .ph-logo .wordmark { display: block; width: calc(600px * var(--s)); height: auto; overflow: visible; }
   .ph-logo .heavy {
-    font-size: calc(var(--u) * 2 / 0.859375);
-    letter-spacing: 0.16em;
-    margin-right: -0.16em;
+    font-size: calc(112px * var(--s));
+    letter-spacing: 0.115em;
+    margin-right: -0.115em;
+    line-height: 1;
+    margin-top: calc(22px * var(--s));
   }
   .ph-logo .cond {
-    font-size: calc(var(--u) / 0.859375);
-    letter-spacing: 0.24em;
-    margin-right: -0.24em;
+    font-size: calc(50px * var(--s));
+    letter-spacing: 0.2em;
+    margin-right: -0.2em;
+    margin-top: calc(18px * var(--s));
   }
   .ph-logo .tag {
-    font-size: calc(var(--u) * 0.75 / 0.859375);
-    letter-spacing: 0.3em;
-    margin-right: -0.3em;
+    font-size: calc(26px * var(--s));
+    letter-spacing: 0.42em;
+    margin-right: -0.42em;
+    margin-top: calc(14px * var(--s));
   }
   .site-header .ph-logo { --s: .24; margin-top: 18px; }
   .foot-brand .ph-logo { --s: .5; color: var(--orange); margin: 14px 0 18px; }
