@@ -364,16 +364,13 @@
     font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
   }
   .tile { grid-column: span var(--c, 4); grid-row: span var(--r, 2); }
-  /* Before / after pair inside one gallery tile */
-  .tile.ba { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; background: none; }
-  .ba-half { position: relative; overflow: hidden; background: #222; }
+  /* Before / after: one stitched image (images/drywall-before-after.jpg), split at 50% */
   .ba-tag { position: absolute; top: 14px; left: 14px; z-index: 1; background: var(--ink); color: var(--cream); font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; padding: 6px 10px; }
-  .ba-half + .ba-half .ba-tag { background: var(--orange); color: var(--ink); }
+  .ba-tag.ba-after { left: calc(50% + 14px); background: var(--orange); color: var(--ink); }
   @media (max-width: 900px) {
     .gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 44vw; gap: 10px; }
     .gallery .tile { grid-column: span 1; grid-row: span 1; }
     .gallery .tile.wide { grid-column: span 2; grid-row: span 2; }
-    .tile.ba { gap: 10px; }
   }
 
   /* ── About ── */
@@ -614,19 +611,15 @@
       <div class="gallery">
         <figure class="tile wide reveal" style="--c:7;--r:3"><img src="images/wire-fence.jpg" alt="New wood post and wire mesh fence along a gravel drive" loading="lazy" style="object-position:center 45%"><figcaption><span class="diamond"></span>Post &amp; wire fence</figcaption></figure>
         <figure class="tile reveal" style="--c:5;--r:3"><img src="images/deck-refinish.jpg" alt="Refinished cedar deck with cable railing" loading="lazy" style="object-position:center 60%"><figcaption><span class="diamond"></span>Deck refinish</figcaption></figure>
-        <figure class="tile wide ba reveal" style="--c:12;--r:3">
-          <div class="ba-half"><img src="images/drywall-before.jpg" alt="Before. Damaged drywall corner with torn paper, exposed corner bead and new patch panels screwed in" loading="lazy" style="object-position:45% 40%"><span class="ba-tag">Before</span></div>
-          <div class="ba-half"><img src="images/drywall-after.jpg" alt="After. The same corner taped, mudded and painted smooth" loading="lazy" style="object-position:40% 45%"><span class="ba-tag">After</span></div>
-          <figcaption><span class="diamond"></span>Drywall repair</figcaption>
-        </figure>
         <figure class="tile reveal" style="--c:4;--r:3"><img src="images/montessori-shelf.jpg" alt="Montessori kids bookshelf with toys in a play corner" loading="lazy" style="object-position:center 70%"><figcaption><span class="diamond"></span>Montessori bookshelf</figcaption></figure>
         <figure class="tile reveal" style="--c:4;--r:3"><img src="images/gazebo-cedar-shake.jpg" alt="Gazebo with a freshly refinished cedar shake roof" loading="lazy" style="object-position:center 50%"><figcaption><span class="diamond"></span>Cedar shake roof</figcaption></figure>
         <figure class="tile reveal" style="--c:4;--r:3"><img src="images/baseboard.jpg" alt="New baseboard and corner trim on a white oak floor" loading="lazy" style="object-position:center 70%"><figcaption><span class="diamond"></span>Baseboard &amp; trim</figcaption></figure>
         <figure class="tile wide reveal" style="--c:5;--r:2"><img src="images/woodwork-4.jpg" alt="Custom built-in closet with drawers" loading="lazy" style="object-position:center 55%"><figcaption><span class="diamond"></span>Closet built&#8209;in</figcaption></figure>
         <figure class="tile reveal" style="--c:4;--r:2"><img src="images/white-oak-floor.jpg" alt="Engineered white oak floor install" loading="lazy" style="object-position:center"><figcaption><span class="diamond"></span>White oak floor</figcaption></figure>
         <figure class="tile reveal" style="--c:3;--r:2"><img src="images/red-oak-bathroom-shelf.jpg" alt="Red oak recessed bathroom shelf" loading="lazy" style="object-position:center"><figcaption><span class="diamond"></span>Red oak shelf</figcaption></figure>
-        <figure class="tile reveal" style="--c:6;--r:2"><img src="images/woodwork-1.jpg" alt="Plywood furniture edge detail" loading="lazy" style="object-position:center"><figcaption><span class="diamond"></span>Custom furniture</figcaption></figure>
-        <figure class="tile reveal" style="--c:6;--r:2"><img src="images/wing-ming-flower-cooler.jpg" alt="Walk-in flower cooler shelving" loading="lazy" style="object-position:center"><figcaption><span class="diamond"></span>Flower cooler build</figcaption></figure>
+        <figure class="tile wide reveal" style="--c:6;--r:2"><img src="images/drywall-before-after.jpg" alt="Drywall repair, before and after. Left, a damaged corner with torn paper and exposed corner bead. Right, the same corner finished smooth and painted." loading="lazy"><span class="ba-tag">Before</span><span class="ba-tag ba-after">After</span><figcaption><span class="diamond"></span>Drywall repair</figcaption></figure>
+        <figure class="tile reveal" style="--c:3;--r:2"><img src="images/woodwork-1.jpg" alt="Plywood furniture edge detail" loading="lazy" style="object-position:center"><figcaption><span class="diamond"></span>Custom furniture</figcaption></figure>
+        <figure class="tile reveal" style="--c:3;--r:2"><img src="images/wing-ming-flower-cooler.jpg" alt="Walk-in flower cooler shelving" loading="lazy" style="object-position:center"><figcaption><span class="diamond"></span>Flower cooler build</figcaption></figure>
       </div>
     </div>
   </section>
