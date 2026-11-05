@@ -394,6 +394,18 @@
   .contact-lines a { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; border-bottom: 1px solid rgba(250,246,239,.18); }
   .contact-lines .k { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(250,246,239,.6); }
   .contact-lines .v { font-family: var(--serif); font-size: 1.15rem; }
+  .qe-copy-row { display: flex; align-items: center; gap: 16px; padding: 18px 0; border-bottom: 1px solid rgba(250,246,239,.18); }
+  .qe-copy-row .v { margin-left: auto; overflow-wrap: anywhere; }
+  .qe-copy { font: inherit; font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cream); background: none; border: 1px solid rgba(250,246,239,.4); padding: 7px 12px; cursor: pointer; flex-shrink: 0; transition: background .15s, color .15s; }
+  .qe-copy:hover { background: var(--cream); color: var(--ink); }
+  .qe-copy.done { background: var(--orange); border-color: var(--orange); color: var(--cream); }
+  .qe-hint { font-size: 0.85rem; color: rgba(250,246,239,.55); max-width: 46ch; }
+  .qe-jobs { border-left: 3px solid var(--orange); padding: 4px 0 4px 16px; }
+  .qe-jobs .est-label { color: rgba(250,246,239,.6); }
+  .qe-jobs ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+  .qe-jobs li { display: flex; gap: 12px; justify-content: space-between; align-items: baseline; font-size: 0.95rem; color: rgba(250,246,239,.85); }
+  .qe-jobs li button { font: inherit; font-size: 0.8rem; color: rgba(250,246,239,.55); background: none; border: 0; cursor: pointer; text-decoration: underline; flex-shrink: 0; }
+  .form-head { grid-column: 1 / -1; background: var(--ink); padding: 18px 20px; display: flex; flex-direction: column; gap: 6px; color: rgba(250,246,239,.8); font-size: 0.95rem; }
   form { grid-column: 7 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(250,246,239,.15); border: 1px solid rgba(250,246,239,.15); align-self: start; }
   .field { background: var(--ink); padding: 18px 20px 14px; display: flex; flex-direction: column; gap: 6px; }
   .field.full { grid-column: 1 / -1; }
@@ -656,20 +668,27 @@
       <div class="contact-intro reveal">
         <p class="eyebrow">Get a free quote</p>
         <h2 class="section-title">Ready to get your project&nbsp;done?</h2>
-        <p class="lede muted">Email me or fill out the form and I'll get back to you within 48&nbsp;hours.</p>
-        <div class="contact-lines">
-          <a href="mailto:kenny@handymanphillips.com"><span class="k">Email</span><span class="v">kenny@handymanphillips.com</span></a>
+        <p class="lede muted">Email me about your project and attach a few photos right from your phone. I'll get back to you within 48&nbsp;hours.</p>
+        <div class="qe-jobs" id="qeJobs" hidden>
+          <span class="est-label">Added to your email</span>
+          <ul id="qeList"></ul>
         </div>
+        <div><a class="btn btn-orange qe-btn" id="qeBtn" href="mailto:kenny@handymanphillips.com">Email me your project <span class="arrow">→</span></a></div>
+        <div class="contact-lines">
+          <div class="qe-copy-row"><span class="k">Email</span><span class="v">kenny@handymanphillips.com</span><button type="button" class="qe-copy" id="qeCopy" aria-label="Copy email address">Copy</button></div>
+        </div>
+        <p class="qe-hint">Email button not opening anything? Copy the address into your email, or use the quick form.</p>
       </div>
       <form class="reveal" id="quoteForm" action="https://formspree.io/f/moeebkop" method="POST">
         <input type="hidden" name="_subject" value="New quote request from handymanphillips.com">
+        <div class="form-head"><span class="eyebrow">No email app?</span><span>Send a quick note here instead.</span></div>
         <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
         <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
         <div class="field"><label for="f-phone">Phone <span style="text-transform:none;letter-spacing:0">(optional)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
         <div class="field"><label for="f-town">Town</label><input id="f-town" name="town" placeholder="Kingston, New Paltz…"></div>
         <div class="field full"><label for="f-job">What do you need done?</label><textarea id="f-job" name="job" required></textarea></div>
         <div class="form-foot">
-          <small>Have photos? Email them to <a href="mailto:kenny@handymanphillips.com" style="text-decoration:underline">kenny@handymanphillips.com</a> for a faster, more accurate price.</small>
+          <small>To send photos, use the email button.</small>
           <button type="submit" class="btn btn-orange" id="formBtn">Send request <span class="arrow">→</span></button>
         </div>
         <div class="form-note" id="formNote" role="status"></div>
@@ -749,6 +768,53 @@
     btn.disabled = false; btn.style.opacity = '';
   });
 
+  // Quote email. Primary contact path is a pre-filled email (photos attach natively).
+  // The estimator adds job lines via window.quoteEmail.add().
+  (() => {
+    const TO = 'kenny@handymanphillips.com';
+    const jobs = [];
+    const btn = document.getElementById('qeBtn'), box = document.getElementById('qeJobs'), list = document.getElementById('qeList');
+    const build = () => {
+      const body = [
+        'Hi Kenny,', '',
+        "I'd like a quote on a project.", '',
+        'My name is ',
+        "I'm located in ",
+        "Here's what I need done ", '',
+        ...(jobs.length ? ['Estimates from your site', ...jobs.map(j => '• ' + j.replace(/\n/g, '\n   ')), ''] : []),
+        "I've attached photos (if I have them).", '',
+        'Thanks!'
+      ].join('\n');
+      btn.href = `mailto:${TO}?subject=${encodeURIComponent('Quote request')}&body=${encodeURIComponent(body)}`;
+      box.hidden = !jobs.length;
+      list.innerHTML = '';
+      jobs.forEach((j, i) => {
+        const li = document.createElement('li');
+        const span = document.createElement('span'); span.textContent = j.split('\n')[0];
+        const rm = document.createElement('button'); rm.type = 'button'; rm.textContent = 'Remove';
+        rm.addEventListener('click', () => {
+          const f = document.getElementById('f-job');
+          f.value = f.value.replace(j, '').replace(/\n{3,}/g, '\n\n').trim();
+          jobs.splice(i, 1); build();
+        });
+        li.append(span, rm); list.append(li);
+      });
+    };
+    window.quoteEmail = { add: line => { jobs.push(line); build(); } };
+    build();
+
+    const copy = document.getElementById('qeCopy');
+    copy.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(TO); }
+      catch {
+        const t = document.createElement('textarea'); t.value = TO; document.body.append(t); t.select();
+        try { document.execCommand('copy'); } catch {} t.remove();
+      }
+      copy.textContent = 'Copied'; copy.classList.add('done');
+      setTimeout(() => { copy.textContent = 'Copy'; copy.classList.remove('done'); }, 1800);
+    });
+  })();
+
   // Rough price estimator. Prices are generated from a private pricing model
   // (not in this repo). Edit rates there and re-run it, never by hand here.
   const PRICES = /* PRICES:START */{"min":175,"round":25,"services":[{"id":"repairs","name":"Repairs & Mounting","tasks":[{"id":"tv","name":"Mount a TV","unit":"TV","qty":[1,1,6,1],"p":[90.0,190.0],"cond":[["Drywall",1.0],["Plaster or brick",1.4],["Over a fireplace",1.6]]},{"id":"shelf","name":"Hang shelves","unit":"shelf","qty":[3,1,20,1],"p":[45.0,95.0],"cond":[["Drywall",1.0],["Plaster or brick",1.4]]},{"id":"vitsoe","name":"Vitsœ 606 shelving","unit":"bay","qty":[3,1,12,1],"p":[97.0,176.0],"cond":[["New install",1.0],["Move or reconfigure",0.8],["Plaster or brick wall",1.35]]},{"id":"mirror","name":"Hang mirrors or art","unit":"piece","qty":[2,1,20,1],"p":[37.0,95.0],"cond":[["Standard size",1.0],["Large or heavy",1.6]]},{"id":"drywall","name":"Patch drywall","unit":"patch","qty":[2,1,15,1],"p":[98.0,201.0],"cond":[["Small holes",0.7],["Fist size",1.0],["Bigger than a plate",1.6]]},{"id":"list","name":"Small repair list","unit":"item","qty":[4,1,20,1],"p":[45.0,100.0],"cond":[]}]},{"id":"carpentry","name":"Carpentry & Installs","tasks":[{"id":"builtin","name":"Closet or built‑in","unit":"ft wide","qty":[6,2,20,1],"p":[486.0,816.0],"cond":[["Painted plywood",1.0],["Stain grade wood",1.25]]},{"id":"montessori","name":"Montessori kids’ shelf","unit":"unit","qty":[1,1,6,1],"p":[464.0,832.0],"cond":[]},{"id":"trim","name":"Baseboard & trim","unit":"ft","qty":[100,20,1000,10],"p":[8.86,16.38],"cond":[["Install only",1.0],["Remove old trim first",1.3]]},{"id":"window","name":"Replace a window","unit":"window","qty":[1,1,15,1],"p":[280.0,510.0],"cond":[["Ground floor",1.0],["Second floor",1.35]]},{"id":"door-int","name":"Interior door","unit":"door","qty":[1,1,15,1],"p":[204.0,367.0],"cond":[["Prehung",1.0],["Slab into old frame",1.2]]},{"id":"door-ext","name":"Exterior door","unit":"door","qty":[1,1,4,1],"p":[528.0,920.0],"cond":[]}]},{"id":"outdoor","name":"Fences & Outdoor Wood","tasks":[{"id":"fence-new","name":"New wood fence","unit":"ft","qty":[50,10,600,10],"p":[48.0,79.0],"cond":[["Easy digging",1.0],["Rocky soil or slope",1.4]]},{"id":"fence-fix","name":"Fence repair","unit":"section","qty":[2,1,20,1],"p":[184.0,378.0],"cond":[]},{"id":"gate","name":"Gate install","unit":"gate","qty":[1,1,4,1],"p":[420.0,810.0],"cond":[]},{"id":"deck","name":"Deck refinishing","unit":"sq ft","qty":[300,50,2000,25],"p":[4.92,8.66],"cond":[["Light weathering",1.0],["Peeling old stain",1.6]]},{"id":"cedar","name":"Gazebo or cedar shake","unit":"sq ft","qty":[200,50,3000,25],"p":[6.5,11.74],"cond":[["Reachable from the ground",1.0],["Ladder or roof work",1.4]]}]},{"id":"paint","name":"Painting & Pressure Washing","tasks":[{"id":"room","name":"Paint a room","unit":"room","qty":[1,1,12,1],"p":[540.0,920.0],"cond":[["Walls only",1.0],["Walls, ceiling and trim",1.65]]},{"id":"cabinets","name":"Paint cabinets","unit":"door or drawer","qty":[20,4,80,1],"p":[92.4,152.4],"cond":[]},{"id":"wash","name":"Pressure washing","unit":"sq ft","qty":[800,100,5000,50],"p":[0.61,1.22],"cond":[["Driveway, walk or patio",1.0],["Siding",1.25],["Deck or fence",1.15]]}]}]}/* PRICES:END */;
@@ -794,8 +860,8 @@
       const price = $('div', { className: 'est-price' });
       outBox.append(price, $('p', { className: 'est-fine' }, 'Labor and basic materials, based on similar jobs. You get a firm written price once I see the job or your photos.'));
 
-      const send = $('button', { type: 'button', className: 'btn btn-orange est-send' }, 'Send this for a firm quote <span class="arrow">→</span>');
-      const sent = $('p', { className: 'est-sent', hidden: true }, 'Added to your quote request below.');
+      const send = $('button', { type: 'button', className: 'btn btn-orange est-send' }, 'Add to my quote email <span class="arrow">→</span>');
+      const sent = $('p', { className: 'est-sent', hidden: true }, 'Added. Scroll down to email it, with photos if you have them.');
       panel.append(chipsWrap, row, nWrap, outBox, send, sent);
 
       const calc = () => {
@@ -842,9 +908,10 @@
         let line = `${t.name}, ${state.qty} ${plural(t.unit, state.qty)}${cond} (estimate ${fmt(lo)} to ${fmt(hi)})`;
         if (notes.value.trim()) line += `\nNotes. ${notes.value.trim()}`;
         jobField.value = jobField.value.trim() ? jobField.value.trim() + '\n\n' + line : line;
+        window.quoteEmail && window.quoteEmail.add(line);
         sent.hidden = false;
         document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-        setTimeout(() => jobField.focus({ preventScroll: true }), 700);
+        setTimeout(() => document.getElementById('qeBtn').focus({ preventScroll: true }), 700);
       });
     });
   })();
