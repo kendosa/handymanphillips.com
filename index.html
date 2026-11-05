@@ -153,7 +153,7 @@
   /* PHILLIPS ink spans 71.35 viewBox units (y 0.94 to 72.29). HANDYMAN line (Oswald 700,
      cap 0.81em) sits below it in the same SVG: cap = 1/3 of PHILLIPS, gap = 0.24 of PHILLIPS,
      stretched to PHILLIPS width with textLength. Matches the composition reference. */
-  .ph-logo .wordmark { display: block; height: calc(var(--wm) * 113.3 / 71.35); width: auto; overflow: visible; }
+  .ph-logo .wordmark { display: block; width: calc(var(--wm) * 365.43 / 71.35); height: calc(var(--wm) * 113.3 / 71.35); max-width: 100%; flex-shrink: 0; overflow: visible; } /* explicit width: iOS Safari mis-sizes inline SVGs with width:auto */
   .ph-logo .heavy, .ph-logo .cond, .ph-logo .tag {
     font-size: var(--sub);
     letter-spacing: 0.22em;
