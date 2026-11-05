@@ -104,11 +104,12 @@
   }
   .btn-outline-ink:hover { background: var(--ink); color: var(--cream); }
   .btn-outline-cream:hover { background: var(--cream); color: var(--ink); border-color: var(--cream); }
-  .btn-orange { background: var(--orange); border-color: var(--orange); color: var(--cream); }
-  .btn-orange:hover { background: var(--orange-deep); border-color: var(--orange-deep); }
+  /* Ink on orange = 5.79:1 (WCAG AA). Hover inverts to orange on ink, same ratio. */
+  .btn-orange { background: var(--orange); border-color: var(--orange); color: var(--ink); }
+  .btn-orange:hover { background: var(--ink); border-color: var(--orange); color: var(--orange); }
   .arrow { color: var(--orange); transition: transform .2s; }
   a:hover .arrow, button:hover .arrow { transform: translateX(4px); }
-  .btn-orange .arrow { color: var(--cream); }
+  .btn-orange .arrow { color: inherit; }
 
   .diamond { display: inline-block; width: 8px; height: 8px; background: var(--orange); transform: rotate(45deg); flex-shrink: 0; }
 
@@ -172,7 +173,7 @@
     width: 34px; height: 34px; background: var(--orange); border: 0; border-radius: 2px; cursor: pointer;
     flex-direction: column; align-items: center; justify-content: center; gap: 4px;
   }
-  .menu-btn span { display: block; width: 13px; height: 1px; background: var(--cream); }
+  .menu-btn span { display: block; width: 13px; height: 1.5px; background: var(--ink); }
   @media (max-width: 900px) {
     .logo { grid-column: span 3; }
     .menu-btn { display: flex; }
@@ -402,7 +403,7 @@
   .qe-copy-row .v { margin-left: auto; overflow-wrap: anywhere; }
   .qe-copy { font: inherit; font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cream); background: none; border: 1px solid rgba(250,246,239,.4); padding: 7px 12px; cursor: pointer; flex-shrink: 0; transition: background .15s, color .15s; }
   .qe-copy:hover { background: var(--cream); color: var(--ink); }
-  .qe-copy.done { background: var(--orange); border-color: var(--orange); color: var(--cream); }
+  .qe-copy.done { background: var(--orange); border-color: var(--orange); color: var(--ink); }
   .qe-hint { font-size: 0.85rem; color: rgba(250,246,239,.55); max-width: 46ch; }
   .qe-jobs { border-left: 3px solid var(--orange); padding: 4px 0 4px 16px; }
   .qe-jobs .est-label { color: rgba(250,246,239,.6); }
