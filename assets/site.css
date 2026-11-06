@@ -632,3 +632,8 @@ html.lb-open { overflow: hidden; }
 .sp-photo-cut { background: none; overflow: visible; align-self: center; display: flex; justify-content: center; }
 .sp-photo-cut img { width: auto; max-width: 100%; height: auto; max-height: 72vh; aspect-ratio: auto; object-fit: contain; }
 @media (max-width: 900px) { .sp-photo-cut img { max-height: 60vh; } }
+
+/* ---- Recent work: one module (list + swapping frame), group pill over the photo ---- */
+#work .proj { margin-top: clamp(40px, 5vw, 64px); }
+.proj-cover { position: relative; }
+.proj-cover .grp-pill { pointer-events: none; }
