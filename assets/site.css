@@ -616,3 +616,11 @@ html.lb-open { overflow: hidden; }
 .sp-photo-ba { grid-column: 7 / -1; align-self: center; }
 .sp-photo-ba img { aspect-ratio: auto; height: auto; object-fit: contain; }
 @media (max-width: 900px) { .sp-photo-ba { grid-column: 1 / -1; } }
+.sp-photo video { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
+@media (max-width: 900px) {
+  .nav { max-height: calc(100svh - var(--header-h) - 14px); overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
+  .nav-sub { gap: 18px; }
+  .nav-group { gap: 4px; }
+  .nav-sub .nav-group-h { margin-bottom: 4px; }
+}
+@media (max-width: 900px) { .nav-sub .nav-group-h { color: var(--ink); opacity: 1; } }
