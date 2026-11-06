@@ -612,3 +612,7 @@ html.lb-open { overflow: hidden; }
 .proj-grp { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; line-height: 1.3; color: rgba(250,246,239,.4); transition: color .25s; }
 .proj-item.is-on .proj-grp { color: var(--orange); }
 @media (max-width: 900px) { .proj-item { grid-template-columns: 2.2em 1fr 1.2em; } }
+/* Before / after hero photo: show the whole stitched image, no crop, a little wider */
+.sp-photo-ba { grid-column: 7 / -1; align-self: center; }
+.sp-photo-ba img { aspect-ratio: auto; height: auto; object-fit: contain; }
+@media (max-width: 900px) { .sp-photo-ba { grid-column: 1 / -1; } }
