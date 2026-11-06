@@ -60,3 +60,7 @@
     open(list, list.indexOf(a));
   });
 })();
+/* Respect reduced motion for looping clips: pause them and show controls instead */
+if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('video[autoplay]').forEach(v => { v.removeAttribute('autoplay'); v.pause(); v.controls = true; });
+}
