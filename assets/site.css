@@ -628,3 +628,7 @@ html.lb-open { overflow: hidden; }
 /* A single gallery photo shows at its own aspect ratio, never cropped */
 .gal[data-n="1"] a.gl { aspect-ratio: auto; justify-self: start; max-width: 100%; }
 .gal[data-n="1"] a.gl img { width: auto; max-width: 100%; height: auto; max-height: 80vh; object-fit: contain; }
+/* Cut out object photo sitting straight on the black hero, no frame */
+.sp-photo-cut { background: none; overflow: visible; align-self: center; display: flex; justify-content: center; }
+.sp-photo-cut img { width: auto; max-width: 100%; height: auto; max-height: 72vh; aspect-ratio: auto; object-fit: contain; }
+@media (max-width: 900px) { .sp-photo-cut img { max-height: 60vh; } }
