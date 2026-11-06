@@ -377,12 +377,7 @@
   .area-map-wrap { grid-column: 7 / -1; grid-row: 1 / span 2; align-self: start; border: 1px solid rgba(250,246,239,.15); }
   .area-map { display: block; width: 100%; height: auto; }
   .area .intro-col { grid-row: 1; }
-  .towns { grid-column: 1 / span 5; grid-row: 2; margin-top: 40px !important; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(250,246,239,.15); border: 1px solid rgba(250,246,239,.15); align-self: start; }
-  .towns li { list-style: none; background: rgba(23,23,23,.75); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); padding: 18px 20px; font-family: var(--serif); font-size: 1.1rem; display: flex; align-items: center; gap: 12px; }
-  .towns li.more { font-family: var(--sans); font-size: 0.9rem; color: rgba(250,246,239,.7); }
-  .towns { padding: 0; margin: 0; }
   @media (max-width: 900px) {
-    .towns { grid-column: 1 / -1; grid-row: auto; grid-template-columns: 1fr 1fr; }
     .area-map-wrap { grid-column: 1 / -1; grid-row: auto; }
     .area .intro-col { grid-row: auto; }
   }
@@ -515,9 +510,6 @@
   .nav-sub a, .nav-sub a:first-child, .nav-sub a:last-child { padding: 0; font-size: 0.92rem; color: inherit; opacity: .85; }
 }
 
-/* towns list grouped by county */
-.towns li.towns-head { grid-column: 1 / -1; background: rgba(23,23,23,.92); font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--orange); padding: 14px 20px; }
-.towns li.more { grid-column: 1 / -1; }
 
 /* ---- Photo thumbs in the services list, service page galleries, full screen viewer ---- */
 .gal { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
