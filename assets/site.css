@@ -206,7 +206,7 @@
     max-width: 15ch;
     margin-top: 22px;
   }
-  .hero-sub { margin-top: 22px; font-size: var(--fs-lead); color: rgba(250,246,239,.85); max-width: 50ch; }
+  .hero-sub { margin-top: 22px; font-size: var(--fs-lead); color: rgba(250,246,239,.85); max-width: 50ch; text-wrap: balance; }
   .hero-actions { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 14px 26px; align-items: center; }
   .hero-phone { font-family: var(--mono); font-size: 0.85rem; letter-spacing: 0.06em; color: rgba(250,246,239,.85); }
   .hero-phone strong { color: var(--cream); font-weight: 500; }
