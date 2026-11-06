@@ -42,13 +42,11 @@
     <nav class="nav" id="nav">
       <div class="nav-drop">
         <a href="#services" class="nav-drop-top" aria-haspopup="true">Services</a>
-        <div class="nav-sub" aria-label="Service pages">
-          <a href="/tv-shelf-mounting/">TV &amp; shelf mounting</a>
-          <a href="/drywall-repair/">Drywall repair</a>
-          <a href="/closet-built-ins/">Closet built&#8209;ins</a>
-          <a href="/fence-installation/">Fence installation</a>
-          <a href="/deck-refinishing/">Deck refinishing</a>
-          <a href="/cedar-shake-refinishing/">Cedar shake roofs</a>
+        <div class="nav-sub" aria-label="Services">
+          <div class="nav-group"><a href="#svc-repairs" class="nav-group-h">Repairs &amp; Mounting</a><a href="/tv-shelf-mounting/">TV &amp; shelf mounting</a><a href="/drywall-repair/">Drywall repair</a><a href="#svc-repairs" class="nav-x">Small repairs</a></div>
+          <div class="nav-group"><a href="#svc-carpentry" class="nav-group-h">Carpentry &amp; Custom Builds</a><a href="/closet-built-ins/">Closet built&#8209;ins</a><a href="#svc-carpentry" class="nav-x">Trim, windows &amp; doors</a><a href="#svc-carpentry" class="nav-x">Custom furniture</a></div>
+          <div class="nav-group"><a href="#svc-paint" class="nav-group-h">Interiors &amp; Renovations</a><a href="#svc-paint" class="nav-x">Painting</a><a href="#svc-paint" class="nav-x">Flooring</a><a href="#svc-paint" class="nav-x">Renovations &amp; build&#8209;outs</a></div>
+          <div class="nav-group"><a href="#svc-outdoor" class="nav-group-h">Outdoor</a><a href="/fence-installation/">Fences &amp; gates</a><a href="/deck-refinishing/">Deck refinishing</a><a href="/cedar-shake-refinishing/">Cedar shake roofs</a><a href="#svc-outdoor" class="nav-x">Pressure washing</a></div>
         </div>
       </div>
       <a href="#work">Work</a>
@@ -79,19 +77,19 @@
         </div>
       </div>
       <div class="hero-cards rise rise-3">
-        <a href="#services" class="hero-card">
-          <span class="hero-card-title"><span class="diamond"></span>Repairs &amp; built&#8209;ins</span>
-          <p>Doors, baseboard, closets, kids&#8217; storage and the small jobs that pile up.</p>
+        <a href="#svc-repairs" class="hero-card">
+          <span class="hero-card-title"><span class="diamond"></span>Repairs &amp; carpentry</span>
+          <p>Mounting, drywall, closets, trim and custom builds, plus the small jobs that pile up.</p>
           <span class="hero-card-link">See services <span class="arrow">→</span></span>
         </a>
-        <a href="#services" class="hero-card">
-          <span class="hero-card-title"><span class="diamond"></span>Fences &amp; outdoor wood</span>
-          <p>New fences, deck refinishing and cedar shake care for Hudson Valley weather.</p>
+        <a href="#svc-outdoor" class="hero-card">
+          <span class="hero-card-title"><span class="diamond"></span>Outdoor</span>
+          <p>Fences, deck refinishing, cedar shake roofs and pressure washing for Hudson Valley weather.</p>
           <span class="hero-card-link">See services <span class="arrow">→</span></span>
         </a>
-        <a href="#services" class="hero-card">
-          <span class="hero-card-title"><span class="diamond"></span>Paint &amp; pressure wash</span>
-          <p>Clean lines inside, clean siding, patios and driveways outside.</p>
+        <a href="#svc-paint" class="hero-card">
+          <span class="hero-card-title"><span class="diamond"></span>Interiors &amp; renovations</span>
+          <p>Painting, new floors and full room refreshes, done with clean lines and careful prep.</p>
           <span class="hero-card-link">See services <span class="arrow">→</span></span>
         </a>
       </div>
@@ -108,60 +106,39 @@
         <div><a href="#contact" class="btn btn-outline-ink">Get a free quote</a></div>
       </div>
       <div class="list-col">
-        <div class="numbered svc reveal" data-svc="repairs">
+        <div class="numbered svc reveal" data-svc="repairs" id="svc-repairs">
           <span class="num"><span>01</span></span>
           <div class="svc-body">
-            <h3><a class="svc-h" href="/tv-shelf-mounting/">Repairs &amp; Mounting</a></h3><p>TVs, shelves, mirrors and art hung level and anchored right, including Vitsœ 606 shelving. Plus the drywall patches, sticky doors and small fixes on your to&#8209;do list.</p>
+            <h3><a class="svc-h" href="/tv-shelf-mounting/">Repairs &amp; Mounting</a></h3><p>TVs, shelves, mirrors and art hung level and anchored right, including Vitsœ 606 shelving. Plus drywall patches, sticky doors and the small fixes on your to&#8209;do list.</p>
             <button type="button" class="est-toggle" aria-expanded="false" aria-controls="est-repairs">Get a rough price <span class="arrow">→</span></button>
             <p class="svc-links"><a href="/tv-shelf-mounting/">TV &amp; shelf mounting <span class="arrow">→</span></a><a href="/drywall-repair/">Drywall repair <span class="arrow">→</span></a></p>
             <div class="est" id="est-repairs" hidden></div>
           </div>
         </div>
-        <div class="numbered svc reveal" data-svc="carpentry">
+        <div class="numbered svc reveal" data-svc="carpentry" id="svc-carpentry">
           <span class="num"><span>02</span></span>
           <div class="svc-body">
-            <h3><a class="svc-h" href="/closet-built-ins/">Carpentry &amp; Installs</a></h3><p>Closet built&#8209;ins, Montessori kids&#8217; shelves, baseboard and trim, and new windows and doors. Built tight, set plumb and finished clean.</p>
+            <h3><a class="svc-h" href="/closet-built-ins/">Carpentry &amp; Custom&nbsp;Builds</a></h3><p>Closet built&#8209;ins, Montessori kids&#8217; shelves, baseboard and trim, new windows and doors, and custom furniture like workbenches, step stools and lamps. Built tight, set plumb and finished clean.</p>
             <button type="button" class="est-toggle" aria-expanded="false" aria-controls="est-carpentry">Get a rough price <span class="arrow">→</span></button>
             <p class="svc-links"><a href="/closet-built-ins/">Closet built&#8209;ins <span class="arrow">→</span></a></p>
             <div class="est" id="est-carpentry" hidden></div>
           </div>
         </div>
-        <div class="numbered svc reveal" data-svc="outdoor">
+        <div class="numbered svc reveal" data-svc="paint" id="svc-paint">
           <span class="num"><span>03</span></span>
           <div class="svc-body">
-            <h3><a class="svc-h" href="/fence-installation/">Fences &amp; Outdoor Wood</a></h3><p>New wood fences, repairs and gates built for Hudson Valley winters. I also refinish decks and gazebos, and replace or refinish cedar shake roofs.</p>
-            <button type="button" class="est-toggle" aria-expanded="false" aria-controls="est-outdoor">Get a rough price <span class="arrow">→</span></button>
-            <p class="svc-links"><a href="/fence-installation/">Fences <span class="arrow">→</span></a><a href="/deck-refinishing/">Deck refinishing <span class="arrow">→</span></a><a href="/cedar-shake-refinishing/">Cedar shake <span class="arrow">→</span></a></p>
-            <div class="est" id="est-outdoor" hidden></div>
-          </div>
-        </div>
-        <div class="numbered svc reveal" data-svc="paint">
-          <span class="num"><span>04</span></span>
-          <div class="svc-body">
-            <h3>Painting &amp; Pressure Washing</h3><p>Interior rooms and cabinets with careful prep and clean lines. Pressure washing for siding, driveways, patios, decks and fences. Plus decorative work like barn quilts.</p>
+            <h3>Interiors &amp; Renovations</h3><p>Interior painting and cabinets, microcement and engineered hardwood floors, full room refreshes and bigger build&#8209;outs like shed conversions and walk&#8209;in coolers. Framing, insulation, drywall and trim, start to finish.</p>
             <button type="button" class="est-toggle" aria-expanded="false" aria-controls="est-paint">Get a rough price <span class="arrow">→</span></button>
             <div class="est" id="est-paint" hidden></div>
           </div>
         </div>
-        <div class="numbered reveal">
-          <span class="num"><span>05</span></span>
+        <div class="numbered svc reveal" data-svc="outdoor" id="svc-outdoor">
+          <span class="num"><span>04</span></span>
           <div class="svc-body">
-            <h3>Flooring</h3><p>Microcement floors and engineered hardwood, laid over a flat, solid base and finished clean at every edge and doorway.</p>
-            <a class="svc-quote" href="#contact">Ask for a quote <span class="arrow">→</span></a>
-          </div>
-        </div>
-        <div class="numbered reveal">
-          <span class="num"><span>06</span></span>
-          <div class="svc-body">
-            <h3>Renovations &amp; Build&#8209;outs</h3><p>Sheds turned into finished rooms, walk&#8209;in coolers and full room refreshes. Framing, insulation, drywall and trim, start to finish.</p>
-            <a class="svc-quote" href="#contact">Ask for a quote <span class="arrow">→</span></a>
-          </div>
-        </div>
-        <div class="numbered reveal">
-          <span class="num"><span>07</span></span>
-          <div class="svc-body">
-            <h3>Custom Builds</h3><p>Workbenches, shop carts, step stools and lamps, built from plywood and hardwood to fit your space and the way you work.</p>
-            <a class="svc-quote" href="#contact">Ask for a quote <span class="arrow">→</span></a>
+            <h3><a class="svc-h" href="/fence-installation/">Outdoor</a></h3><p>New wood fences, repairs and gates built for Hudson Valley winters. Deck and gazebo refinishing, new or refinished cedar shake roofs, pressure washing and painted barn quilts.</p>
+            <button type="button" class="est-toggle" aria-expanded="false" aria-controls="est-outdoor">Get a rough price <span class="arrow">→</span></button>
+            <p class="svc-links"><a href="/fence-installation/">Fences <span class="arrow">→</span></a><a href="/deck-refinishing/">Deck refinishing <span class="arrow">→</span></a><a href="/cedar-shake-refinishing/">Cedar shake roofs <span class="arrow">→</span></a></p>
+            <div class="est" id="est-outdoor" hidden></div>
           </div>
         </div>
         <div class="numbered extra reveal">
@@ -515,7 +492,7 @@
 
   // Rough price estimator. Prices are generated from a private pricing model
   // (not in this repo). Edit rates there and re-run it, never by hand here.
-  const PRICES = /* PRICES:START */{"min":175,"round":25,"services":[{"id":"repairs","name":"Repairs & Mounting","tasks":[{"id":"tv","name":"Mount a TV","unit":"TV","qty":[1,1,6,1],"p":[90.0,190.0],"cond":[["Drywall",1.0],["Plaster or brick",1.4],["Over a fireplace",1.6]]},{"id":"shelf","name":"Hang shelves","unit":"shelf","qty":[3,1,20,1],"p":[45.0,95.0],"cond":[["Drywall",1.0],["Plaster or brick",1.4]]},{"id":"vitsoe","name":"Vitsœ 606 shelving","unit":"bay","qty":[3,1,12,1],"p":[97.0,176.0],"cond":[["New install",1.0],["Move or reconfigure",0.8],["Plaster or brick wall",1.35]]},{"id":"mirror","name":"Hang mirrors or art","unit":"piece","qty":[2,1,20,1],"p":[37.0,95.0],"cond":[["Standard size",1.0],["Large or heavy",1.6]]},{"id":"drywall","name":"Patch drywall","unit":"patch","qty":[2,1,15,1],"p":[98.0,201.0],"cond":[["Small holes",0.7],["Fist size",1.0],["Bigger than a plate",1.6]]},{"id":"list","name":"Small repair list","unit":"item","qty":[4,1,20,1],"p":[45.0,100.0],"cond":[]}]},{"id":"carpentry","name":"Carpentry & Installs","tasks":[{"id":"builtin","name":"Closet or built‑in","unit":"ft wide","qty":[6,2,20,1],"p":[486.0,816.0],"cond":[["Painted plywood",1.0],["Stain grade wood",1.25]]},{"id":"montessori","name":"Montessori kids’ shelf","unit":"unit","qty":[1,1,6,1],"p":[464.0,832.0],"cond":[]},{"id":"trim","name":"Baseboard & trim","unit":"ft","qty":[100,20,1000,10],"p":[8.86,16.38],"cond":[["Install only",1.0],["Remove old trim first",1.3]]},{"id":"window","name":"Replace a window","unit":"window","qty":[1,1,15,1],"p":[280.0,510.0],"cond":[["Ground floor",1.0],["Second floor",1.35]]},{"id":"door-int","name":"Interior door","unit":"door","qty":[1,1,15,1],"p":[204.0,367.0],"cond":[["Prehung",1.0],["Slab into old frame",1.2]]},{"id":"door-ext","name":"Exterior door","unit":"door","qty":[1,1,4,1],"p":[528.0,920.0],"cond":[]}]},{"id":"outdoor","name":"Fences & Outdoor Wood","tasks":[{"id":"fence-new","name":"New wood fence","unit":"ft","qty":[50,10,600,10],"p":[48.0,79.0],"cond":[["Easy digging",1.0],["Rocky soil or slope",1.4]]},{"id":"fence-fix","name":"Fence repair","unit":"section","qty":[2,1,20,1],"p":[184.0,378.0],"cond":[]},{"id":"gate","name":"Gate install","unit":"gate","qty":[1,1,4,1],"p":[420.0,810.0],"cond":[]},{"id":"deck","name":"Deck refinishing","unit":"sq ft","qty":[300,50,2000,25],"p":[4.92,8.66],"cond":[["Light weathering",1.0],["Peeling old stain",1.6]]},{"id":"cedar","name":"Gazebo or cedar shake","unit":"sq ft","qty":[200,50,3000,25],"p":[6.5,11.74],"cond":[["Reachable from the ground",1.0],["Ladder or roof work",1.4]]}]},{"id":"paint","name":"Painting & Pressure Washing","tasks":[{"id":"room","name":"Paint a room","unit":"room","qty":[1,1,12,1],"p":[540.0,920.0],"cond":[["Walls only",1.0],["Walls, ceiling and trim",1.65]]},{"id":"cabinets","name":"Paint cabinets","unit":"door or drawer","qty":[20,4,80,1],"p":[92.4,152.4],"cond":[]},{"id":"wash","name":"Pressure washing","unit":"sq ft","qty":[800,100,5000,50],"p":[0.61,1.22],"cond":[["Driveway, walk or patio",1.0],["Siding",1.25],["Deck or fence",1.15]]}]}]}/* PRICES:END */;
+  const PRICES = /* PRICES:START */{"min":175,"round":25,"services":[{"id":"repairs","name":"Repairs & Mounting","tasks":[{"id":"tv","name":"Mount a TV","unit":"TV","qty":[1,1,6,1],"p":[90.0,190.0],"cond":[["Drywall",1.0],["Plaster or brick",1.4],["Over a fireplace",1.6]]},{"id":"shelf","name":"Hang shelves","unit":"shelf","qty":[3,1,20,1],"p":[45.0,95.0],"cond":[["Drywall",1.0],["Plaster or brick",1.4]]},{"id":"vitsoe","name":"Vitsœ 606 shelving","unit":"bay","qty":[3,1,12,1],"p":[97.0,176.0],"cond":[["New install",1.0],["Move or reconfigure",0.8],["Plaster or brick wall",1.35]]},{"id":"mirror","name":"Hang mirrors or art","unit":"piece","qty":[2,1,20,1],"p":[37.0,95.0],"cond":[["Standard size",1.0],["Large or heavy",1.6]]},{"id":"drywall","name":"Patch drywall","unit":"patch","qty":[2,1,15,1],"p":[98.0,201.0],"cond":[["Small holes",0.7],["Fist size",1.0],["Bigger than a plate",1.6]]},{"id":"list","name":"Small repair list","unit":"item","qty":[4,1,20,1],"p":[45.0,100.0],"cond":[]}]},{"id":"carpentry","name":"Carpentry & Custom Builds","tasks":[{"id":"builtin","name":"Closet or built‑in","unit":"ft wide","qty":[6,2,20,1],"p":[486.0,816.0],"cond":[["Painted plywood",1.0],["Stain grade wood",1.25]]},{"id":"montessori","name":"Montessori kids’ shelf","unit":"unit","qty":[1,1,6,1],"p":[464.0,832.0],"cond":[]},{"id":"trim","name":"Baseboard & trim","unit":"ft","qty":[100,20,1000,10],"p":[8.86,16.38],"cond":[["Install only",1.0],["Remove old trim first",1.3]]},{"id":"window","name":"Replace a window","unit":"window","qty":[1,1,15,1],"p":[280.0,510.0],"cond":[["Ground floor",1.0],["Second floor",1.35]]},{"id":"door-int","name":"Interior door","unit":"door","qty":[1,1,15,1],"p":[204.0,367.0],"cond":[["Prehung",1.0],["Slab into old frame",1.2]]},{"id":"door-ext","name":"Exterior door","unit":"door","qty":[1,1,4,1],"p":[528.0,920.0],"cond":[]}]},{"id":"outdoor","name":"Outdoor","tasks":[{"id":"fence-new","name":"New wood fence","unit":"ft","qty":[50,10,600,10],"p":[48.0,79.0],"cond":[["Easy digging",1.0],["Rocky soil or slope",1.4]]},{"id":"fence-fix","name":"Fence repair","unit":"section","qty":[2,1,20,1],"p":[184.0,378.0],"cond":[]},{"id":"gate","name":"Gate install","unit":"gate","qty":[1,1,4,1],"p":[420.0,810.0],"cond":[]},{"id":"deck","name":"Deck refinishing","unit":"sq ft","qty":[300,50,2000,25],"p":[4.92,8.66],"cond":[["Light weathering",1.0],["Peeling old stain",1.6]]},{"id":"cedar","name":"Gazebo or cedar shake","unit":"sq ft","qty":[200,50,3000,25],"p":[6.5,11.74],"cond":[["Reachable from the ground",1.0],["Ladder or roof work",1.4]]},{"id":"wash","name":"Pressure washing","unit":"sq ft","qty":[800,100,5000,50],"p":[0.61,1.22],"cond":[["Driveway, walk or patio",1.0],["Siding",1.25],["Deck or fence",1.15]]}]},{"id":"paint","name":"Interiors & Renovations","tasks":[{"id":"room","name":"Paint a room","unit":"room","qty":[1,1,12,1],"p":[540.0,920.0],"cond":[["Walls only",1.0],["Walls, ceiling and trim",1.65]]},{"id":"cabinets","name":"Paint cabinets","unit":"door or drawer","qty":[20,4,80,1],"p":[92.4,152.4],"cond":[]}]}]}/* PRICES:END */;
   (() => {
     if (!PRICES || !PRICES.services) return;
     const $ = (tag, attrs = {}, html = '') => { const el = document.createElement(tag); Object.assign(el, attrs); if (html) el.innerHTML = html; return el; };
