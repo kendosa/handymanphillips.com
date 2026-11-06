@@ -593,8 +593,7 @@ html.lb-open { overflow: hidden; }
 .nav-drop:hover .nav-sub, .nav-drop:focus-within .nav-sub { transform: translate(-50%, 0); }
 .nav-group { display: flex; flex-direction: column; padding: 22px 26px 18px; }
 .nav-sub a, .nav-sub a:first-child, .nav-sub a:last-child { padding: 6px 0; font-size: 0.95rem; }
-.nav-sub .nav-group-h { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--orange); padding: 0 0 8px; }
-.nav-sub .nav-group-h:hover, .nav-sub .nav-group-h:focus-visible { color: var(--cream); }
+.nav-sub .nav-group-h { cursor: default; user-select: none; font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--orange); padding: 0 0 8px; }
 .nav-group:nth-child(n+3) { border-top: 1px solid rgba(250,246,239,.12); }
 @media (max-width: 900px) {
   .nav-sub, .nav-drop:hover .nav-sub, .nav-drop:focus-within .nav-sub { transform: none; width: auto; display: flex; flex-direction: column; gap: 14px; padding-top: 14px; }
