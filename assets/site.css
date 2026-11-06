@@ -623,3 +623,5 @@ html.lb-open { overflow: hidden; }
   .nav-sub .nav-group-h { margin-bottom: 4px; }
 }
 @media (max-width: 900px) { .nav-sub .nav-group-h { color: var(--ink); opacity: 1; } }
+.gal[data-n="8"] { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 700px) { .gal[data-n="8"] { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
