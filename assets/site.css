@@ -637,3 +637,42 @@ html.lb-open { overflow: hidden; }
 #work .proj { margin-top: clamp(40px, 5vw, 64px); }
 .proj-cover { position: relative; }
 .proj-cover .grp-pill { pointer-events: none; }
+
+/* ---- Homepage v2 (2026-11-12): shorter scroll. Services band moved to group pages,
+   stats under the hero cards, service area inside About, FAQ inside Contact. ---- */
+.hero-stats { grid-column: 1 / -1; list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 36px; font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(250,246,239,.7); }
+.hero-stats li { display: flex; align-items: baseline; gap: 10px; }
+.hs-num { font-family: var(--serif); font-size: 1.25rem; letter-spacing: -0.02em; text-transform: none; color: var(--orange); }
+@media (max-width: 600px) { .hero-stats { flex-direction: column; gap: 6px; } }
+.nav-sub a.nav-group-h { cursor: pointer; }
+.nav-sub a.nav-group-h:hover { color: var(--cream); }
+
+/* Recent work: first 8 projects, the rest behind one button */
+.proj:not(.show-all) .proj-more { display: none; }
+.proj:not(.show-all) .proj-list li:nth-child(8) .proj-item { border-bottom: 1px solid rgba(250,246,239,.12); }
+.proj-more-btn { margin-top: 22px; background: none; border: 0; padding: 0 0 2px; border-bottom: 1px solid var(--orange); color: var(--cream); font: inherit; font-weight: 500; cursor: pointer; display: inline-flex; gap: 8px; }
+.proj-more-btn:hover .arrow { transform: translateY(3px); }
+
+/* About + service area in one band */
+.about-area { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; align-items: start; margin-top: clamp(56px, 7vw, 96px); padding-top: clamp(40px, 5vw, 64px); border-top: 1px solid rgba(23,23,23,.12); scroll-margin-top: 20px; }
+.about-area-copy { grid-column: 1 / span 6; display: flex; flex-direction: column; gap: 22px; }
+.area-title { font-size: clamp(1.5rem, 2.6vw, 2.3rem); line-height: 1.08; letter-spacing: -0.03em; }
+.about-area .area-map-wrap { grid-column: 9 / -1; grid-row: auto; border-color: rgba(23,23,23,.15); }
+@media (max-width: 900px) {
+  .about-area { grid-template-columns: minmax(0, 1fr); }
+  .about-area-copy, .about-area .area-map-wrap { grid-column: 1 / -1; }
+  .about-area .area-map-wrap { margin-top: 32px; }
+}
+
+/* FAQ inside the dark contact band */
+.contact-faq { grid-column: 7 / -1; margin-top: clamp(40px, 5vw, 64px); scroll-margin-top: 20px; }
+.contact-faq .eyebrow { display: block; margin-bottom: 12px; }
+.band-ink .faq details { border-top-color: rgba(250,246,239,.15); }
+.band-ink .faq details:last-child { border-bottom-color: rgba(250,246,239,.15); }
+.band-ink .faq details p { color: rgba(250,246,239,.65); }
+@media (max-width: 900px) { .contact-faq { grid-column: 1 / -1; } }
+
+/* Group pages: estimator shown open on its own */
+.est-solo .est { margin-top: 0; }
+#estimate .sp-related { margin-top: 56px; }
+#work .intro-col + .proj { margin-top: clamp(40px, 5vw, 64px); }
