@@ -676,3 +676,7 @@ html.lb-open { overflow: hidden; }
 .est-solo .est { margin-top: 0; }
 #estimate .sp-related { margin-top: 56px; }
 #work .intro-col + .proj { margin-top: clamp(40px, 5vw, 64px); }
+
+/* Service area map: square crop (viewBox -183 39 1366 1366, built by ~/Desktop/handyman-map-build/build_service_map_square.py) filling the right half */
+.about-area-copy { grid-column: 1 / span 5; }
+.about-area .area-map-wrap { grid-column: 7 / -1; }
