@@ -212,8 +212,6 @@
   .hero-phone strong { color: var(--cream); font-weight: 500; }
   .hero-contact { display: flex; flex-direction: column; gap: 8px; }
   /* Phone number is assembled by JS on tap so it never sits in the HTML for scrapers. */
-  .ph-show { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--orange); }
-  .qe-copy.ph-show { text-decoration: none; }
   .ph-num a { color: inherit; }
   .ph-num .ph-sep { opacity: .45; margin: 0 .4em; }
   .ph-num[data-variant="inline"] a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--orange); }
@@ -222,7 +220,7 @@
   .contact-lines .ph-num a.qe-copy { padding: 7px 12px; border-bottom: 1px solid rgba(250,246,239,.4); }
   .ph-num[data-variant="row"] .ph-big { font-family: var(--serif); font-size: 1.15rem; margin-right: 6px; }
   .foot-show { color: rgba(250,246,239,.75); text-decoration-color: rgba(250,246,239,.35); text-align: left; }
-  .foot-show:hover { color: var(--cream); }
+  .foot-show a:hover { color: var(--cream); }
   .hero-cards {
     grid-column: 1 / -1;
     margin-top: clamp(40px, 6vw, 70px);
