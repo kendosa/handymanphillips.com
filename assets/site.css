@@ -210,6 +210,7 @@
   .hero-actions { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 14px 26px; align-items: center; }
   .hero-phone { font-family: var(--mono); font-size: 0.85rem; letter-spacing: 0.06em; color: rgba(250,246,239,.85); }
   .hero-phone strong { color: var(--cream); font-weight: 500; }
+  .hero-phone .hero-text { color: var(--cream); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--orange); }
   .hero-contact { display: flex; flex-direction: column; gap: 8px; }
   /* Phone number is assembled by JS on tap so it never sits in the HTML for scrapers. */
   .ph-num a { color: inherit; }
