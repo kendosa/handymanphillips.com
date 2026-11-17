@@ -133,6 +133,8 @@
   /* header (desktop and mobile): PHILLIPS over HANDYMAN & HOME SERVICE. Footer keeps the stacked PHILLIPS / HANDYMAN lockup. */
   /* desktop: PHILLIPS over HANDYMAN & HOME SERVICE; PHILLIPS ink is 231 of 343.47 units tall */
   .ph-logo .wordmark-2line { --wmf: 1.2; width: calc(var(--wm) * var(--wmf) * 1174.74 / 231); height: calc(var(--wm) * var(--wmf) * 343.47 / 231); } /* --wmf: desktop logo scale */
+  /* small laptops / tablets (901 to 1100px): the nav has 7 items incl. Google Maps, so tighten it and use the logo at 1x */
+  @media (min-width: 901px) and (max-width: 1100px) { :root { --nav-f: 0.95rem; } .site-header .nav { gap: 14px; } .ph-logo .wordmark-2line { --wmf: 1; } }
   .ph-logo .heavy, .ph-logo .cond, .ph-logo .tag {
     font-size: var(--sub);
     letter-spacing: 0.22em;
@@ -594,9 +596,12 @@ html.lb-open { overflow: hidden; }
 .proj-meta { grid-area: 2 / 1; margin: 14px 0 0; font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(250,246,239,.6); }
 .proj-count { color: var(--orange); }
 @media (max-width: 900px) {
-  .proj { grid-template-columns: minmax(0, 1fr); }
-  .proj-frame { grid-column: 1; grid-row: 1; position: static; margin-bottom: 28px; }
-  .proj-list { grid-column: 1; grid-row: 2; }
+  /* mobile: photo sticks to the top of the screen while the project list scrolls under it.
+     Flex column (not grid rows) so the sticky photo's containing block is the whole module. */
+  .proj { display: flex; flex-direction: column; align-items: stretch; }
+  .proj-frame { order: -1; position: sticky; top: 0; z-index: 2; background: var(--ink); padding: 12px 0 18px; margin: -12px 0 10px; }
+  .proj-frame .proj-cover { aspect-ratio: 3 / 2; }
+  .proj-list { order: 0; }
   .proj-item { grid-template-columns: 2.2em 1fr 1.2em; padding: 15px 0; }
   .proj-type { display: none; }
 }
