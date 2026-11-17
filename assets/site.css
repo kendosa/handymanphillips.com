@@ -460,7 +460,7 @@
     /* mobile: every section gap in the footer reads as 48px of visible space
        (top edge > logo > tagline > Services/Company > Contact > divider); text leading adds ~6px */
     footer { padding-top: 48px; }
-    .foot-brand .ph-logo { margin-bottom: 29px; }
+    .foot-brand .ph-logo { --wm: 2.2rem; margin-bottom: 28px; } /* same scale as the mobile header logo */
     .foot-brand { grid-column: 1 / -1; margin-bottom: 41px; }
     .foot-col, .foot-col:first-of-type { grid-column: span 2; }
     .foot-col + .foot-col + .foot-col { margin-top: 42px; } /* Contact wraps to its own row */
