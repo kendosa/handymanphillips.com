@@ -706,6 +706,12 @@ html.lb-open { overflow: hidden; }
 .est-solo .est { margin-top: 0; }
 #estimate .sp-related { margin-top: 56px; }
 #work .intro-col + .proj { margin-top: clamp(20px, 2.5vw, 32px); }
+/* homepage: rule halfway between the hero stats line and the Recent work eyebrow (user, 2026-11-17).
+   --work-e = eyebrow's offset below #work's top padding (measured 0) */
+.hero + #work { position: relative; --work-e: 0px; }
+.hero + #work::before { content: ""; position: absolute; top: calc((var(--section) + var(--work-e) - var(--pad)) / 2);
+  left: max(var(--pad), calc((100% - 1480px) / 2 + var(--pad))); right: max(var(--pad), calc((100% - 1480px) / 2 + var(--pad)));
+  border-top: 1px solid rgba(250,246,239,.15); }
 /* Recent work: space after the intro text is half what it was (user, 2026-11-17) */
 #work .work-head { margin-bottom: clamp(20px, 3vw, 35px); }
 @media (max-width: 900px) { #work .intro-col { margin-bottom: 20px; } }
