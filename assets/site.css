@@ -448,6 +448,8 @@
   footer { background: var(--ink); color: var(--cream); border-top: 1px solid rgba(250,246,239,.12); padding: 60px 0 40px; }
   .foot-brand { grid-column: 1 / span 5; display: flex; flex-direction: column; gap: 14px; }
   .foot-brand p { color: rgba(250,246,239,.6); max-width: 34ch; }
+  footer { text-wrap: pretty; } /* no one-word widows in footer text; &nbsp; between the last two words is the fallback */
+  footer .ph-num a { white-space: nowrap; } /* keep the phone number on one line */
   .foot-col { grid-column: span 2; display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem; }
   .foot-col:first-of-type { grid-column: 8 / span 2; }
   .foot-col .eyebrow { margin-bottom: 6px; }
