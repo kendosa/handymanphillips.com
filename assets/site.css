@@ -599,7 +599,9 @@ html.lb-open { overflow: hidden; }
   /* mobile: photo sticks to the top of the screen while the project list scrolls under it.
      Flex column (not grid rows) so the sticky photo's containing block is the whole module. */
   .proj { display: flex; flex-direction: column; align-items: stretch; }
-  .proj-frame { order: -1; position: sticky; top: 0; z-index: 2; background: var(--ink); padding: 12px 0 18px; margin: -12px 0 10px; }
+  /* sticky gap above the photo = the gap between the module's top rule and the photo (the .proj padding-top),
+     pulled up into that padding so the resting position doesn't change */
+  .proj-frame { order: -1; position: sticky; top: 0; z-index: 2; background: var(--ink); padding: clamp(40px, 5vw, 64px) 0 18px; margin: calc(-1 * clamp(40px, 5vw, 64px)) 0 10px; }
   .proj-frame .proj-cover { aspect-ratio: 3 / 2; }
   .proj-list { order: 0; }
   .proj-item { grid-template-columns: 2.2em 1fr 1.2em; padding: 15px 0; }
