@@ -664,7 +664,7 @@ html.lb-open { overflow: hidden; }
 @media (max-width: 900px) { .sp-photo-cut img { max-height: 60vh; } }
 
 /* ---- Recent work: one module (list + swapping frame), group pill over the photo ---- */
-#work .proj { margin-top: clamp(40px, 5vw, 64px); }
+#work .proj { margin-top: clamp(20px, 2.5vw, 32px); }
 .proj-cover { position: relative; }
 .proj-cover .grp-pill { pointer-events: none; }
 
@@ -705,7 +705,10 @@ html.lb-open { overflow: hidden; }
 /* Group pages: estimator shown open on its own */
 .est-solo .est { margin-top: 0; }
 #estimate .sp-related { margin-top: 56px; }
-#work .intro-col + .proj { margin-top: clamp(40px, 5vw, 64px); }
+#work .intro-col + .proj { margin-top: clamp(20px, 2.5vw, 32px); }
+/* Recent work: space after the intro text is half what it was (user, 2026-11-17) */
+#work .work-head { margin-bottom: clamp(20px, 3vw, 35px); }
+@media (max-width: 900px) { #work .intro-col { margin-bottom: 20px; } }
 
 /* Service area map: square crop (viewBox -183 39 1366 1366, built by ~/Desktop/handyman-map-build/build_service_map_square.py) filling the right half */
 .about-area-copy { grid-column: 1 / span 5; }
