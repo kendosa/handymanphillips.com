@@ -1,4 +1,4 @@
-/* Phillips Handyman & Home Services: shared styles for all pages */
+/* Phillips Handyman & Home Service: shared styles for all pages */
   :root {
     --ink: #171717;
     --cream: #faf6ef;
@@ -127,7 +127,16 @@
   /* PHILLIPS ink spans 71.35 viewBox units (y 0.94 to 72.29). HANDYMAN line (Oswald 700,
      cap 0.81em) sits below it in the same SVG: cap = 1/3 of PHILLIPS, gap = 0.24 of PHILLIPS,
      stretched to PHILLIPS width with textLength. Matches the composition reference. */
-  .ph-logo .wordmark { display: block; width: calc(var(--wm) * 365.43 / 71.35); height: calc(var(--wm) * 113.3 / 71.35); max-width: 100%; flex-shrink: 0; overflow: visible; } /* explicit width: iOS Safari mis-sizes inline SVGs with width:auto */
+  .ph-logo .wordmark { display: block; width: calc(var(--wm) * 365.5 / 71.35); height: calc(var(--wm) * 118.3 / 71.35); max-width: 100%; flex-shrink: 0; overflow: visible; } /* explicit width: iOS Safari mis-sizes inline SVGs with width:auto */
+  .ph-logo .wordmark-stacked { height: calc(var(--wm) * 137.33 / 71.35); } /* footer: stacked PHILLIPS / HANDYMAN lockup */
+  /* header shows the 2-line full-name lockup on desktop, the stacked PHILLIPS / HANDYMAN lockup on mobile */
+  .site-header .wm-mobile { display: none; }
+  /* desktop: PHILLIPS over HANDYMAN & HOME SERVICE; PHILLIPS ink is 231 of 343.47 units tall */
+  .ph-logo .wordmark-2line { --wmf: 1.2; width: calc(var(--wm) * var(--wmf) * 1174.74 / 231); height: calc(var(--wm) * var(--wmf) * 343.47 / 231); } /* --wmf: desktop logo scale */
+  @media (max-width: 900px) {
+    .site-header .wm-desktop { display: none; }
+    .site-header .wm-mobile { display: block; }
+  }
   .ph-logo .heavy, .ph-logo .cond, .ph-logo .tag {
     font-size: var(--sub);
     letter-spacing: 0.22em;
