@@ -129,14 +129,9 @@
      stretched to PHILLIPS width with textLength. Matches the composition reference. */
   .ph-logo .wordmark { display: block; width: calc(var(--wm) * 365.5 / 71.35); height: calc(var(--wm) * 118.3 / 71.35); max-width: 100%; flex-shrink: 0; overflow: visible; } /* explicit width: iOS Safari mis-sizes inline SVGs with width:auto */
   .ph-logo .wordmark-stacked { height: calc(var(--wm) * 137.33 / 71.35); } /* footer: stacked PHILLIPS / HANDYMAN lockup */
-  /* header shows the 2-line full-name lockup on desktop, the stacked PHILLIPS / HANDYMAN lockup on mobile */
-  .site-header .wm-mobile { display: none; }
+  /* header (desktop and mobile): PHILLIPS over HANDYMAN & HOME SERVICE. Footer keeps the stacked PHILLIPS / HANDYMAN lockup. */
   /* desktop: PHILLIPS over HANDYMAN & HOME SERVICE; PHILLIPS ink is 231 of 343.47 units tall */
   .ph-logo .wordmark-2line { --wmf: 1.2; width: calc(var(--wm) * var(--wmf) * 1174.74 / 231); height: calc(var(--wm) * var(--wmf) * 343.47 / 231); } /* --wmf: desktop logo scale */
-  @media (max-width: 900px) {
-    .site-header .wm-desktop { display: none; }
-    .site-header .wm-mobile { display: block; }
-  }
   .ph-logo .heavy, .ph-logo .cond, .ph-logo .tag {
     font-size: var(--sub);
     letter-spacing: 0.22em;
@@ -154,7 +149,7 @@
   .site-header .ph-logo { --wm: 2.9496rem; margin-top: calc(var(--wm) * -0.0132); margin-left: 0.55px; }
   /* footer logo: same space above (footer's 60px top padding) and below (46px + the 14px flex gap) */
   .foot-brand .ph-logo { --wm: 2.9496rem; color: var(--orange); margin: 0 0 46px; }
-  @media (max-width: 900px) { .site-header .ph-logo { --wm: 2.2rem; } } /* smaller stacked logo in the mobile header */
+  @media (max-width: 900px) { .site-header .ph-logo { --wm: 2.2rem; } } /* smaller header logo on mobile */
   /* Matches .hero-sub */
   .nav { grid-column: 5 / -1; display: flex; justify-content: flex-end; align-items: center; gap: clamp(20px, 2.2vw, 34px); font-family: var(--sans); font-size: var(--nav-f); font-weight: 400; color: rgba(250,246,239,.85); }
   .nav a:hover { color: var(--cream); }
