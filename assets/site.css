@@ -455,9 +455,14 @@
   .foot-col a:hover { color: var(--cream); }
   .foot-base { grid-column: 1 / -1; margin-top: 60px; padding-top: 24px; border-top: 1px solid rgba(250,246,239,.12); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 0.8rem; color: rgba(250,246,239,.5); }
   @media (max-width: 900px) {
-    .foot-brand { grid-column: 1 / -1; margin-bottom: 36px; }
+    /* mobile: every section gap in the footer reads as 48px of visible space
+       (top edge > logo > tagline > Services/Company > Contact > divider); text leading adds ~6px */
+    footer { padding-top: 48px; }
+    .foot-brand .ph-logo { margin-bottom: 29px; }
+    .foot-brand { grid-column: 1 / -1; margin-bottom: 41px; }
     .foot-col, .foot-col:first-of-type { grid-column: span 2; }
-    .foot-col + .foot-col + .foot-col { margin-top: 36px; } /* Contact wraps to its own row; match the 36px gap above Services */
+    .foot-col + .foot-col + .foot-col { margin-top: 42px; } /* Contact wraps to its own row */
+    .foot-base { margin-top: 45px; }
   }
 
   /* Scroll reveal */
