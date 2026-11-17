@@ -203,6 +203,8 @@
   }
   @keyframes heroZoom { from { transform: scale(1.12); } to { transform: scale(1); } }
   .hero::before { content: ""; position: absolute; inset: 0 0 auto; height: 180px; z-index: 1; background: linear-gradient(to bottom, rgba(23,23,23,.7), transparent); pointer-events: none; }
+  /* mobile: no hero photo, plain black behind the header and hero (the <picture> also skips downloading it) */
+  @media (max-width: 900px) { .hero-media, .hero::before { display: none; } }
   .hero-inner { position: relative; z-index: 1; margin-top: calc(var(--header-h) + 70px); }
   .hero-copy { grid-column: 1 / span 9; }
   .hero h1 {
