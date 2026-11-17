@@ -40,6 +40,7 @@ h1{margin:0;font-family:"Newsreader",Georgia,serif;font-weight:500;font-size:cla
 .btn-dark{background:#ffdecc;color:#171717}
 .btn-light{background:#ffdecc;color:#171717} /* #ff5c00 + 80% white: black text 14:1 (AAA) */
 .btn small{display:block;margin-top:6px;font-family:"Inter Tight",system-ui,sans-serif;font-size:14px;font-weight:400;letter-spacing:0;line-height:1.4;opacity:.75}
+.btn small .sent{display:block;text-wrap:balance} /* one sentence per line; a sentence that wraps splits evenly instead of leaving a short end */
 .btn svg{flex:none}
 .btn:focus-visible{outline:3px solid #171717;outline-offset:3px}
 footer{font-size:15px;line-height:1.5}
@@ -56,7 +57,7 @@ footer a{color:inherit}
 <nav class="links" aria-label="Links">
 <a class="btn btn-dark" href="https://handymanphillips.com/"><span>Visit the&nbsp;website<small>Services, recent work and a free&nbsp;quote</small></span><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 <a class="btn btn-light" href="https://maps.app.goo.gl/Wt6CCE8mRtR74cPY7"><span>Find me on Google&nbsp;Maps<small>Reviews and&nbsp;hours</small></span><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></a>
-<a class="btn btn-dark" href="sms:+18452023504?&amp;body=Hi%20Kenny%2C%20I%20found%20you%20on%20handymanphillips.com.%20I%20need%20help%20with%20"><span>Text me for a ballpark&nbsp;quote<small>Send a few photos and what you need&nbsp;done.<br>I&#8217;ll text you back with a rough&nbsp;price.</small></span><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></a>
+<a class="btn btn-dark" href="sms:+18452023504?&amp;body=Hi%20Kenny%2C%20I%20found%20you%20on%20handymanphillips.com.%20I%20need%20help%20with%20"><span>Text me for a ballpark&nbsp;quote<small><span class="sent">Send a few photos and what you need&nbsp;done.</span><span class="sent">I&#8217;ll text you back with a rough&nbsp;price.</span></small></span><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></a>
 </nav>
 <footer>Call or text <a href="sms:+18452023504">(845)&nbsp;202-3504</a></footer>
 </main>
