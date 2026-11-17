@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Phillips;Kenny;;;
+FN:Kenny Phillips
+ORG:Phillips Handyman & Home Service
+TITLE:Handyman
+TEL;TYPE=CELL,VOICE,pref:+18452023504
+EMAIL;TYPE=INTERNET,WORK,pref:kenny@handymanphillips.com
+URL;TYPE=WORK:https://handymanphillips.com/
+NOTE:Handyman and home service in Ulster and Orange County\, NY. Text me a few photos and what you need done for a rough estimate.
+END:VCARD
