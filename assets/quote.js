@@ -12,7 +12,7 @@
       const res = await fetch(quoteForm.action, { method: 'POST', body: new FormData(quoteForm), headers: { Accept: 'application/json' } });
       if (res.ok) {
         quoteForm.reset();
-        note.textContent = "Thanks! Your request is in. I'll get back to you within 48 hours.";
+        note.textContent = "Thanks! Your request is in. I'll get back to you within 48\u00a0hours.";
       } else {
         const data = await res.json().catch(() => ({}));
         note.textContent = (data.errors && data.errors.map(x => x.message).join(' ')) || 'Something went wrong. Please email kenny@handymanphillips.com instead.';

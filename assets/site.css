@@ -35,6 +35,7 @@
   a { color: inherit; text-decoration: none; }
   h1, h2, h3 { font-family: var(--serif); font-weight: 500; margin: 0; text-wrap: balance; }
   p { margin: 0; text-wrap: pretty; }
+  body { text-wrap: pretty; } /* no one-word widows anywhere (user rule); headings use balance, HTML ties last two words with &nbsp; via fix_widows.py */
 
   /* Placeholder text to fill before launch */
   .ph {
@@ -216,7 +217,7 @@
   }
   .hero-sub { margin-top: 22px; font-size: var(--fs-lead); color: rgba(250,246,239,.85); max-width: 50ch; text-wrap: balance; }
   .hero-actions { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 14px 26px; align-items: center; }
-  .hero-phone { font-family: var(--mono); font-size: 0.85rem; letter-spacing: 0.06em; color: rgba(250,246,239,.85); }
+  .hero-phone { font-family: var(--mono); font-size: min(0.85rem, calc((100vw - 40px) / 22)); letter-spacing: 0.06em; color: rgba(250,246,239,.85); white-space: nowrap; } /* scales down on the narrowest phones so 'Email kenny@...' stays on one line (no widow) */
   .hero-phone strong { color: var(--cream); font-weight: 500; }
   .hero-phone .hero-text { color: var(--cream); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--orange); }
   .hero-contact { display: flex; flex-direction: column; gap: 8px; }
@@ -248,7 +249,7 @@
     transition: background-color .2s;
   }
   .hero-card:hover { background: rgba(23,23,23,.92); }
-  .hero-card-title { display: flex; align-items: center; gap: 12px; font-family: var(--serif); font-size: 1.15rem; }
+  .hero-card-title { display: flex; align-items: center; gap: 12px; font-family: var(--serif); font-size: 1.15rem; line-height: 1.2; } /* tight when a group name wraps to 2 lines */
   .hero-card p { font-size: 0.9rem; color: rgba(250,246,239,.75); line-height: 1.45; }
   .hero-card-link { margin-top: 4px; font-size: 0.88rem; font-weight: 500; display: inline-flex; gap: 8px; }
   @media (max-width: 900px) {
@@ -504,7 +505,7 @@
 .sp-photo2 img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
 .sp-related { margin-top: 48px; display: flex; flex-direction: column; border-top: 1px solid rgba(23,23,23,.12); padding-top: 24px; }
 .sp-related .eyebrow { margin-bottom: 8px; }
-.sp-rel { display: flex; align-items: center; gap: 12px; padding: 16px 0; border-bottom: 1px solid rgba(23,23,23,.12); font-family: var(--serif); font-size: var(--fs-h3); }
+.sp-rel { display: flex; align-items: center; gap: 12px; padding: 16px 0; border-bottom: 1px solid rgba(23,23,23,.12); font-family: var(--serif); font-size: var(--fs-h3); line-height: 1.2; }
 .sp-rel .arrow { margin-left: auto; }
 .band-ink .numbered + .numbered { border-top-color: rgba(250,246,239,.15); }
 .band-ink .numbered p { color: rgba(250,246,239,.65); }
