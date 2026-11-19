@@ -797,3 +797,7 @@ html.lb-open { overflow: hidden; }
   /* Service pages with no photo yet: copy runs wider instead of leaving a hole */
   .sp-hero-solo .sp-hero-copy { grid-column: 1 / span 9; }
 }
+
+/* Static gallery photo (no lightbox), shown uncropped */
+.gal .gs { margin: 0; position: relative; }
+.gal .gs img { width: 100%; height: auto; display: block; }
